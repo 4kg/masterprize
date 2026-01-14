@@ -1,41 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>MASTERPRIZE</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    body {
+      font-family: monospace;
+      background: #111;
+      color: #eee;
+      margin: 0;
+      padding: 2rem;
+      line-height: 1.5;
+    }
+    .lang-switch {
+      position: fixed;
+      top: 1rem;
+      right: 1rem;
+    }
+    button {
+      background: #222;
+      color: #eee;
+      border: 1px solid #555;
+      padding: 0.3rem 0.6rem;
+      cursor: pointer;
+      font-size: 0.9rem;
+    }
+    button.active {
+      border-color: #0f0;
+    }
+    a {
+      color: #0ff;
+      text-decoration: none;
+    }
+    a:hover {
+      text-decoration: underline;
+    }
+    .links p {
+      margin: 0.5rem 0;
+    }
+  </style>
+</head>
 <body>
-  <main style="max-width: 720px; margin: 60px auto; font-family: Arial, sans-serif; line-height: 1.6;">
-    
-    <h1>MASTERPRIZE</h1>
 
-    <p>
-      MASTERPRIZE is a Go (Baduk) tournament concept focused on real monetary motivation.
-    </p>
+<div class="lang-switch">
+  <button id="btn-en" class="active" onclick="setLang('en')">EN</button>
+  <button id="btn-ru" onclick="setLang('ru')">RU</button>
+</div>
 
-    <p>
-      The core idea is simple: prize money should be accessible not only to top players,
-      but to anyone willing to play and improve.
-    </p>
+<!-- EN -->
+<div data-lang="en">
+  <h1>MASTERPRIZE</h1>
+  <p>Project on Go (Baduk)</p>
+  <div class="links">
+    <p>VK: <a href="https://vk.com/baduk_win" target="_blank">vk.com/baduk_win</a></p>
+    <p>Next tournament: <a href="https://gofederation.ru/tournaments/430797527/applications" target="_blank">Go Federation</a></p>
+  </div>
+</div>
 
-    <h2>Concept</h2>
-    <ul>
-      <li>Cash-prize Go tournaments</li>
-      <li>Handicap / MacMahon-based formats</li>
-      <li>Fair competition across skill levels</li>
-      <li>Focus on participation, not elite exclusivity</li>
-    </ul>
+<!-- RU -->
+<div data-lang="ru" style="display:none;">
+  <h1>MASTERPRIZE</h1>
+  <p>Проект о Го (Бадук)</p>
+  <div class="links">
+    <p>VK: <a href="https://vk.com/baduk_win" target="_blank">vk.com/baduk_win</a></p>
+    <p>Ближайший турнир: <a href="https://gofederation.ru/tournaments/430797527/applications" target="_blank">РФГ</a></p>
+  </div>
+</div>
 
-    <h2>Why MASTERPRIZE</h2>
-    <p>
-      Traditional Go tournaments often reward only the strongest players.
-      MASTERPRIZE is designed to keep players engaged by making the reward structure
-      meaningful for a much wider audience.
-    </p>
+<script>
+  function setLang(lang) {
+    document.querySelectorAll('[data-lang]').forEach(el => {
+      el.style.display = el.getAttribute('data-lang') === lang ? 'block' : 'none';
+    });
+    document.getElementById('btn-en').classList.toggle('active', lang === 'en');
+    document.getElementById('btn-ru').classList.toggle('active', lang === 'ru');
+    localStorage.setItem('lang', lang);
+    document.documentElement.lang = lang;
+  }
+  setLang(localStorage.getItem('lang') || 'en');
+</script>
 
-    <h2>Status</h2>
-    <p>
-      Project in early development.<br>
-      Concept testing and format refinement in progress.
-    </p>
-
-    <footer style="margin-top: 60px; font-size: 0.9em; color: #666;">
-      © MASTERPRIZE
-    </footer>
-
-  </main>
 </body>
+</html>
