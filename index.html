@@ -8,36 +8,88 @@
   <link rel="icon" href="/favicon.ico" type="image/x-icon">
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
   <style>
     body {
       font-family: monospace;
       background: #111;
       color: #eee;
       margin: 0;
-      padding: 2rem;
       line-height: 1.5;
     }
-    h1 {
-      margin-top: 0;
-    }
+
     a {
       color: #0ff;
       text-decoration: none;
     }
+
     a:hover {
       text-decoration: underline;
     }
+
+    /* ===== HEADER ===== */
+    header {
+      position: relative;
+      height: 320px;
+      background: 
+        linear-gradient(rgba(0,0,0,0.55), rgba(0,0,0,0.55)),
+        url("header.jpg") center / cover no-repeat;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      padding: 1rem 2rem;
+    }
+
+    nav {
+      position: relative;
+    }
+
+    .menu-button {
+      cursor: pointer;
+      user-select: none;
+    }
+
+    .dropdown {
+      display: none;
+      position: absolute;
+      top: 1.5rem;
+      left: 0;
+      background: #111;
+      border: 1px solid #333;
+      padding: 0.5rem;
+    }
+
+    nav:hover .dropdown {
+      display: block;
+    }
+
+    .dropdown a {
+      display: block;
+      padding: 0.3rem 0;
+    }
+
+    .header-text {
+      max-width: 800px;
+    }
+
+    /* ===== CONTENT ===== */
+    .container {
+      padding: 2rem;
+    }
+
     .section {
       margin: 2rem 0;
       padding: 1rem;
       border: 1px solid #333;
     }
-    .section h2 {
-      margin: 0 0 0.5rem 0;
+
+    .offline {
+      color: red;
+      font-size: 1.1rem;
+      font-weight: bold;
     }
   </style>
 </head>
-
 
 <body>
 
@@ -53,20 +105,16 @@
       <a href="contacts.html">Контакты</a>
     </div>
   </nav>
+
+  <div class="header-text">
+    <h1>MASTERPRIZE</h1>
+    <p>Призовые турниры по Го • Онлайн и оффлайн</p>
+    <p>Совместно с Российской Федерацией Го</p>
+  </div>
 </header>
 
 <div class="container">
   <div class="section">
-    <h1>MASTERPRIZE</h1>
-    <h2>Призовые турниры по Го</h2>
-    <h2>Онлайн и оффлайн</h2>
-    <p>Совместно с Российской Федерацией Го.</p>
-  </div>
-</div>
-
-  <div class="container">
-  <div class="section">
-
     <h2>Ближайший турнир</h2>
     <p><strong>MASTERPRIZE 1.0</strong></p>
     <p>Призовой фонд: 100 000 ₽</p>
@@ -81,8 +129,6 @@
     </p>
   </div>
 </div>
-
-
 
 </body>
 </html>
