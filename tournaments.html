@@ -1,135 +1,167 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
-  <meta charset="UTF-8">
-  <title>MASTERPRIZE | Турниры</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="icon" href="/favicon.ico">
+<meta charset="UTF-8">
+<title>MASTERPRIZE | Го турниры</title>
+<link rel="icon" href="/favicon.ico" type="image/x-icon">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <style>
-    body {
-      font-family: monospace;
-      font-size: 16px;
-      background: #111;
-      color: #eee;
-      margin: 0;
-      line-height: 1.5;
-    }
+<style>
+  body {
+    font-family: monospace;
+    font-size: 16px;
+    background: #161616;
+    color: #e4e4e4;
+    margin: 0;
+    line-height: 1.5;
+  }
 
-    a {
-      color: #0ff;
-      text-decoration: none;
-    }
+  a {
+    color: #8fbcd4;
+    text-decoration: none;
+  }
 
-    a:hover {
-      text-decoration: underline;
-    }
+  a:hover {
+    text-decoration: underline;
+  }
 
-    header {
-      position: relative;
-      height: 320px;
-      background: 
-        linear-gradient(rgba(0,0,0,0.55), rgba(0,0,0,0.55)),
-        url("header.jpg") center / cover no-repeat;
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-      padding: 1rem 2rem;
-    }
+  header {
+    position: relative;
+    height: 300px;
+    background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url("header.jpg") center / cover no-repeat;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 1rem;
+  }
 
-    nav {
-      position: relative;
-    }
+  nav {
+    position: relative;
+    text-align: left;
+  }
 
-    .menu-button {
-      cursor: pointer;
-      user-select: none;
-    }
+  .menu-button {
+    cursor: pointer;
+    user-select: none;
+    display: inline-block;
+    padding: 0.5rem 1rem;
+    background: #222;
+    border-radius: 4px;
+    margin-bottom: 0.5rem;
+  }
 
-    .dropdown {
-      display: none;
-      position: absolute;
-      top: 1.5rem;
-      left: 0;
-      background: #111;
-      border: 1px solid #333;
-      padding: 0.5rem;
-    }
+  .dropdown {
+    display: none;
+    position: absolute;
+    top: 2.5rem;
+    left: 0%;
+    transform: none;
+    background: #1e1e1e;
+    border: 1px solid #333;
+    padding: 0.5rem 1rem;
+    min-width: 220px;
+    border-radius: 4px;
+    z-index: 100;
+  }
 
-    nav:hover .dropdown {
-      display: block;
-    }
+  nav:hover .dropdown {
+    display: block;
+  }
 
-    .dropdown a {
-      display: block;
-      padding: 0.3rem 0;
-    }
+  .dropdown a {
+    display: block;
+    padding: 0.4rem 0;
+    color: #8fbcd4;
+  }
 
-    .header-text {
-      max-width: 800px;
-    }
+  .dropdown a.money-link {
+    font-weight: bold;
+    color: #c7a86b;
+  }
 
-    /* ===== CONTENT ===== */
-    .container {
-      padding: 1rem;
-    }
+  .container {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 1.5rem;
+  }
 
-    .section {
-      margin: 1rem 0;
-      padding: 1rem;
-      border: 1px solid #333;
-    }
+  section {
+    margin: 2rem 0;
+    padding: 1.5rem;
+    border: 1px solid #2a2a2a;
+    background: #1b1b1b;
+    border-radius: 4px;
+  }
 
-    .offline {
-      color: red;
-      font-size: 1.1rem;
-      font-weight: bold;
-    }
+  .news-banner {
+    display: block;
+    padding: 1rem;
+    margin-bottom: 1.5rem;
+    background: rgba(50, 50, 50, 0.7);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 4px;
+    text-align: center;
+    font-weight: bold;
+  }
 
-    /* ===== СТИЛИ ТАБЛИЦЫ ===== */
-    .tournament-table {
-      width: 100%;
-      border-collapse: collapse;
-      margin: 20px 0;
-      color: #e0e0e0; /* светлый текст */
-      table-layout: fixed; /* фиксированная ширина столбцов */
-    }
+  .news-banner a {
+    color: #fff;
+    font-size: 1.1rem;
+  }
 
-    .tournament-table th,
-    .tournament-table td {
-      border: 1px solid #444; /* чёткая граница */
-      padding: 10px 12px;      /* внутренние отступы */
-      overflow: hidden;
-      text-overflow: ellipsis;
-      white-space: nowrap;
-      min-width: 120px; /* ~15 символов */
-    }
+  h1, h2 {
+    margin-top: 0;
+    color: #d8d8d8;
+  }
 
-    .tournament-table th {
-      background: #222;
-      text-align: left;
-    }
+  ol {
+    padding-left: 1.2rem;
+  }
 
-    .tournament-table td:nth-child(1),
-    .tournament-table td:nth-child(3) {
-      text-align: center;
-    }
+  /* ===== СТИЛИ ТАБЛИЦЫ ТУРНИРОВ ===== */
+  .tournament-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+    color: #e0e0e0; /* светлый текст */
+    table-layout: fixed; /* фиксированная ширина столбцов */
+  }
 
-    .tournament-table td:nth-child(4) {
-      text-align: right;
-    }
+  .tournament-table th,
+  .tournament-table td {
+    border: 1px solid #444; /* чёткая граница */
+    padding: 10px 12px;      /* внутренние отступы */
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    min-width: 120px; /* примерно 15 символов */
+  }
 
-    .tournament-table a {
-      color: #8fbcd4;
-      text-decoration: none;
-    }
+  .tournament-table th {
+    background: #222;
+    text-align: left;
+  }
 
-    .tournament-table a:hover {
-      text-decoration: underline;
-    }
-  </style>
+  .tournament-table td:nth-child(1),
+  .tournament-table td:nth-child(3) {
+    text-align: center;
+  }
+
+  .tournament-table td:nth-child(4) {
+    text-align: right;
+  }
+
+  .tournament-table a {
+    color: #8fbcd4;
+    text-decoration: none;
+  }
+
+  .tournament-table a:hover {
+    text-decoration: underline;
+  }
+</style>
+
 </head>
-
 
 <body>
 
@@ -138,14 +170,21 @@
     <span class="menu-button">MENU ▾</span>
     <div class="dropdown">
       <a href="index.html">Главная</a>
-      <a href="upcoming.html">Ближайшие турниры</a>
-      <a href="past.html">Прошедшие турниры</a>
-      <a href="photos.html">Фото</a>
+      <a href="money-online.html" class="money-link">Выигрывать деньги онлайн</a>
+      <a href="tournaments.html">Турниры</a>
       <a href="partners.html">Партнёры</a>
       <a href="contacts.html">Контакты</a>
     </div>
   </nav>
+
+  <div class="header-text">
+    <h1>MASTERPRIZE</h1>
+    <p>⚫ Призовые туниры по Го</p>
+    <p>⚪ Онлайн и оффлайн</p>
+    <p>⚫ Совместно с Федерацией Го России</p>
+  </div>
 </header>
+
 
   <div class="container">
     <div class="section">
