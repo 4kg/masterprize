@@ -1,71 +1,182 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
-  <meta charset="UTF-8">
-  <title>MASTERPRIZE | Го турниры</title>
+<meta charset="UTF-8">
+<title>MASTERPRIZE | Го турниры</title>
+<link rel="icon" href="/favicon.ico" type="image/x-icon">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <link rel="icon" href="/favicon.ico" type="image/x-icon">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style>
+  body {
+    font-family: monospace;
+    font-size: 16px;
+    background: #161616;
+    color: #e4e4e4;
+    margin: 0;
+    line-height: 1.5;
+  }
 
-  <style>
-    body {
-      font-family: monospace;
-      font-size: 16px;
-      background: #161616;
-      color: #e4e4e4;
-      margin: 0;
-      line-height: 1.5;
-    }
+  a {
+    color: #8fbcd4;
+    text-decoration: none;
+  }
 
-    a {
-      color: #8fbcd4;
-      text-decoration: none;
-    }
+  a:hover {
+    text-decoration: underline;
+  }
 
-    a:hover {
-      text-decoration: underline;
-    }
+  header {
+    position: relative;
+    height: 300px;
+    background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url("header.jpg") center / cover no-repeat;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 1rem;
+  }
 
-    header {
-      position: relative;
-      height: 300px;
-      background:
-        linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)),
-        url("header.jpg") center / cover no-repeat;
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-      padding: 1rem;
-    }
+  nav {
+    position: relative;
+    text-align: center;
+  }
 
-    nav {
-      position: relative;
-    }
+  .menu-button {
+    cursor: pointer;
+    user-select: none;
+    display: inline-block;
+    padding: 0.5rem 1rem;
+    background: #222;
+    border-radius: 4px;
+    margin-bottom: 0.5rem;
+  }
 
-    .menu-button {
-      cursor: pointer;
-      user-select: none;
-    }
+  .dropdown {
+    display: none;
+    position: absolute;
+    top: 2.5rem;
+    left: 50%;
+    transform: translateX(-50%);
+    background: #1e1e1e;
+    border: 1px solid #333;
+    padding: 0.5rem 1rem;
+    min-width: 220px;
+    border-radius: 4px;
+    z-index: 100;
+  }
 
-    .dropdown {
-      display: none;
-      position: absolute;
-      top: 1.5rem;
-      left: 0;
-      background: #1e1e1e;
-      border: 1px solid #333;
-      padding: 0.5rem 1rem;
-      min-width: 220px;
-    }
+  nav:hover .dropdown {
+    display: block;
+  }
 
-    nav:hover .dropdown {
-      display: block;
-    }
+  .dropdown a {
+    display: block;
+    padding: 0.4rem 0;
+    color: #8fbcd4;
+  }
 
-    .dropdown a {
-      display: block;
-      padding: 0.4rem 0;
-    }
+  .dropdown a.money-link {
+    font-weight: bold;
+    color: #c7a86b;
+  }
 
-    .dropdown a.money-link {
-      font-weight:
+  .container {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 1.5rem;
+  }
+
+  section {
+    margin: 2rem 0;
+    padding: 1.5rem;
+    border: 1px solid #2a2a2a;
+    background: #1b1b1b;
+    border-radius: 4px;
+  }
+
+  .news-banner {
+    display: block;
+    padding: 1rem;
+    margin-bottom: 1.5rem;
+    background: #2a1b0d;
+    border: 1px solid #c7a86b;
+    border-radius: 4px;
+    text-align: center;
+    font-weight: bold;
+  }
+
+  .news-banner a {
+    color: #fff;
+    font-size: 1.1rem;
+  }
+
+  h1, h2 {
+    margin-top: 0;
+    color: #d8d8d8;
+  }
+
+  ol {
+    padding-left: 1.2rem;
+  }
+</style>
+</head>
+
+<body>
+
+<header>
+  <nav>
+    <span class="menu-button">MENU ▾</span>
+    <div class="dropdown">
+      <a href="index.html">Главная</a>
+      <a href="money-online.html" class="money-link">Выигрывать деньги онлайн</a>
+      <a href="upcoming.html">Ближайшие турниры</a>
+      <a href="past.html">Прошедшие турниры</a>
+      <a href="photos.html">Фото</a>
+      <a href="partners.html">Партнёры</a>
+      <a href="contacts.html">Контакты</a>
+    </div>
+  </nav>
+
+  <div class="header-text">
+    <h1>MASTERPRIZE</h1>
+    <p>Призовые турниры по Го • Онлайн и оффлайн</p>
+    <p>Совместно с Российской Федерацией Го</p>
+  </div>
+</header>
+
+<div class="container">
+
+  <!-- Новости с баннером -->
+  <div class="news-banner">
+    🔹 <a href="money-online.html">Узнайте, как выигрывать деньги онлайн, играя в Го!</a>
+  </div>
+
+  <section>
+    <h1>MASTERPRIZE — как выигрывать деньги онлайн, играя в Го</h1>
+
+    <p>В интеллектуальной игре Го деньги выигрываются не случайно, а через стратегию и расчёт. В проекте MASTERPRIZE можно выигрывать деньги онлайн в форовом формате Мак-Магона, где шансы сбалансированы между разными уровнями игроков.</p>
+
+    <p>В отличие от классических турниров, где призы получают только топовые спортсмены, здесь предусмотрена расширенная призовая линейка. Это создаёт реальные возможности выигрыша для игроков разного рейтинга — от начинающих до опытных участников.</p>
+
+    <h2>Почему можно выигрывать деньги онлайн именно в Го</h2>
+    <p>Го — интеллектуальная игра без элемента случайности. Результат партии определяется стратегией, расчётом и умением оценивать позицию. Именно поэтому выигрывать деньги онлайн в Го — это не вопрос удачи, а вопрос подготовки и уровня игры.</p>
+    <p>В турнирах MASTERPRIZE используется форовый формат Мак-Магона, который уравнивает шансы игроков разного рейтинга. Это создаёт реальную конкуренцию и расширяет круг потенциальных победителей.</p>
+    <p>Онлайн-формат позволяет участвовать из любой точки мира, сохраняя официальный статус партии и её влияние на рейтинг. Игры проходят с видеоконтролем и в соответствии с официальными правилами вида спорта «го».</p>
+    <p>Анализ спорных ситуаций осуществляется независимой комиссией, в состав которой входят опытные судьи и профессиональные игроки, включая международного гроссмейстера Александра Динерштейна.</p>
+
+    <h2>Как участвовать и выигрывать деньги онлайн</h2>
+    <ol>
+      <li>Ознакомьтесь с ближайшими турнирами на официальном сайте проекта.</li>
+      <li>Изучите регламент конкретного турнира и формат форы.</li>
+      <li>Пройдите регистрацию и оплатите турнирный взнос.</li>
+    </ol>
+
+    <p>Онлайн-турниры позволяют выигрывать деньги онлайн из любой точки при соблюдении регламента и видеоконтроля партии.</p>
+    <p>Денежные призы выплачиваются организатором, как правило, в течение двух банковских дней после утверждения турнирной таблицы главным судьёй.</p>
+    <p>По всем вопросам можно обратиться к координатору турнира — контакты указаны в регламенте каждого турнира.</p>
+
+  </section>
+
+</div>
+
+</body>
+</html>
