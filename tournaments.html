@@ -85,7 +85,52 @@
       color: red;
       font-size: 1.1rem;
       font-weight: bold;
-    }
+
+      <style>
+/* Тут уже есть твои стили */
+
+/* Вставляешь стили таблицы в конец существующего блока */
+.tournament-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 20px 0;
+  color: #e0e0e0; /* светлый текст */
+  table-layout: fixed; /* фиксированная ширина столбцов */
+}
+
+.tournament-table th,
+.tournament-table td {
+  border: 1px solid #444; /* чёткая граница */
+  padding: 10px 12px;      /* внутренние отступы */
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  min-width: 120px; /* ~15 символов */
+}
+
+.tournament-table th {
+  background: #222;
+  text-align: left;
+}
+
+.tournament-table td:nth-child(1),
+.tournament-table td:nth-child(3) {
+  text-align: center;
+}
+
+.tournament-table td:nth-child(4) {
+  text-align: right;
+}
+
+.tournament-table a {
+  color: #8fbcd4;
+  text-decoration: none;
+}
+
+.tournament-table a:hover {
+  text-decoration: underline;
+}
+
   </style>
 </head>
 
@@ -126,8 +171,6 @@
       <th>Фонд (руб)</th>
       <th>Место</th>
       <th>Регламент</th>
-      <th>Примечание</th>
-      <th>Статус</th>
     </tr>
   </thead>
   <tbody>
@@ -142,18 +185,15 @@
           сайт ФГР
         </a>
       </td>
-      <td></td>
-      <td></td>
     </tr>
 
     <!-- Пустая строка -->
     <tr>
-      <td></td><td></td><td></td><td></td>
-      <td></td><td></td><td></td><td></td>
+      <td></td><td></td><td></td><td></td><td></td><td></td>
     </tr>
-
   </tbody>
 </table>
+
 
   </div>
 </div>
