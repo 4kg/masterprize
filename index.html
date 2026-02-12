@@ -127,6 +127,35 @@
   margin-top: 1rem;
 }
 
+  .feedback-slider-wrapper {
+  display: flex;
+  align-items: center;
+}
+
+.scroll-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 10;
+  background: rgba(30, 30, 30, 0.8);
+  color: #fff;
+  border: none;
+  font-size: 24px;
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+  border-radius: 4px;
+  user-select: none;
+}
+
+.scroll-btn.left {
+  left: 0;
+}
+
+.scroll-btn.right {
+  right: 0;
+}
+
+
 .feedback-track {
   display: inline-flex;
   animation: feedbackScroll 25s linear infinite;
@@ -185,22 +214,29 @@
 <h2>Отзывы участников</h2>
 
 
-<div class="feedback-slider">
-  <div class="feedback-track">
-    <img src="win_money_1.jpg" alt="Свежий формат">
-    <img src="win_money_2.jpg" alt="Серьёзный призовой фонд">
-    <img src="win_money_3.jpg" alt="Организация и контроль">
-    <img src="win_money_4.jpg" alt="Классные места проведения">
-    <img src="win_money_5.jpg" alt="Турнир Го онлайн">
+<div class="feedback-slider-wrapper" style="position: relative;">
+  <button class="scroll-btn left">&#8592;</button>
+  
+  <div class="feedback-slider">
+    <div class="feedback-track">
+      <img src="win_money_1.jpg" alt="Свежий формат">
+      <img src="win_money_2.jpg" alt="Серьёзный призовой фонд">
+      <img src="win_money_3.jpg" alt="Организация и контроль">
+      <img src="win_money_4.jpg" alt="Классные места проведения">
+      <img src="win_money_5.jpg" alt="Турнир Го онлайн">
 
-    <!-- дубликаты для бесконечной прокрутки -->
-    <img src="win_money_1.jpg" alt="Свежий формат">
-    <img src="win_money_2.jpg" alt="Серьёзный призовой фонд">
-    <img src="win_money_3.jpg" alt="Организация и контроль">
-    <img src="win_money_4.jpg" alt="Классные места проведения">
-    <img src="win_money_5.jpg" alt="Турнир Го онлайн">
+      <!-- дубликаты для бесконечной прокрутки -->
+      <img src="win_money_1.jpg" alt="Свежий формат">
+      <img src="win_money_2.jpg" alt="Серьёзный призовой фонд">
+      <img src="win_money_3.jpg" alt="Организация и контроль">
+      <img src="win_money_4.jpg" alt="Классные места проведения">
+      <img src="win_money_5.jpg" alt="Турнир Го онлайн">
+    </div>
   </div>
+
+  <button class="scroll-btn right">&#8594;</button>
 </div>
+
       </div>
 </div>
 
@@ -233,5 +269,20 @@
   </div>
 </div>
 
+<script>
+const slider = document.querySelector('.feedback-slider');
+const btnLeft = document.querySelector('.scroll-btn.left');
+const btnRight = document.querySelector('.scroll-btn.right');
+
+btnLeft.addEventListener('click', () => {
+  slider.scrollBy({ left: -200, behavior: 'smooth' });
+});
+
+btnRight.addEventListener('click', () => {
+  slider.scrollBy({ left: 200, behavior: 'smooth' });
+});
+</script>
+
+  
 </body>
 </html>
