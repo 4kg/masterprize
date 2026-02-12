@@ -120,7 +120,7 @@
 
   /* feedbacks slider */
 .feedback-slider {
-  overflow-x: auto;
+  overflow-x: hidden;
   scroll-behavior: smooth; 
   white-space: nowrap;
   position: relative;
@@ -266,18 +266,24 @@ const slider = document.querySelector('.feedback-slider');
 const btnLeft = document.querySelector('.scroll-btn.left');
 const btnRight = document.querySelector('.scroll-btn.right');
 
-// Автопрокрутка
-let scrollAmount = 1; // px за шаг
-function autoScroll() {
-  slider.scrollLeft += scrollAmount;
-  
-  // если дошли до конца, сбрасываем scrollLeft
-  if (slider.scrollLeft >= slider.scrollWidth - slider.clientWidth) {
-    slider.scrollLeft = 0;
-  }
-  requestAnimationFrame(autoScroll);
+let scrollSpeed = 1; // px за шаг
+let autoScrollInterval;
+
+// Функция автопрокрутки
+function startAutoScroll() {
+  autoScrollInterval = setInterval(() => {
+    slider.scrollLeft += scrollSpeed;
+
+    // если дошли до конца, возвращаемся в начало
+    if (slider.scrollLeft >= slider.scrollWidth - slider.clientWidth) {
+      slider.scrollLeft = 0;
+    }
+  }, 16); // ~60 FPS
 }
-autoScroll();
+
+function stopAutoScroll() {
+  clearInterval(autoScrollInterval);
+}
 
 // Стрелки
 btnLeft.addEventListener('click', () => {
@@ -287,6 +293,13 @@ btnLeft.addEventListener('click', () => {
 btnRight.addEventListener('click', () => {
   slider.scrollBy({ left: 200, behavior: 'smooth' });
 });
+
+// Останавливаем автоскролл при наведении
+slider.addEventListener('mouseenter', stopAutoScroll);
+slider.addEventListener('mouseleave', startAutoScroll);
+
+// Запуск автоскролла
+startAutoScroll();
 </script>
 
 
