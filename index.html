@@ -117,6 +117,37 @@
   ol {
     padding-left: 1.2rem;
   }
+
+  /* feedbacks slider */
+.feedback-slider {
+  overflow: hidden;
+  white-space: nowrap;
+  position: relative;
+  width: 100%;
+  margin-top: 1rem;
+}
+
+.feedback-track {
+  display: inline-flex;
+  animation: feedbackScroll 60s linear infinite;
+}
+
+.feedback-track img {
+  height: 220px;
+  margin-right: 20px;
+  border-radius: 6px;
+  border: 1px solid #333;
+}
+
+@keyframes feedbackScroll {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+
+.feedback-slider:hover .feedback-track {
+  animation-play-state: paused;
+}
+
 </style>
 </head>
 
@@ -148,6 +179,27 @@
   <div class="news-banner">
     ⚫⚪ <a href="money-online.html">Узнайте, как выигрывать деньги онлайн, играя в Го!</a>
   </div>
+
+  <div class="container">
+  <div class="section">
+<h2>Отзывы участников</h2>
+
+<div class="feedback-slider">
+  <div class="feedback-track">
+    <img src="feedback1.jpg" alt="Комментарий 1">
+    <img src="feedback2.jpg" alt="Комментарий 2">
+    <img src="feedback3.jpg" alt="Комментарий 3">
+    <img src="feedback4.jpg" alt="Комментарий 4">
+
+    <!-- дубликаты для бесконечной прокрутки -->
+    <img src="feedback1.jpg" alt="Комментарий 1">
+    <img src="feedback2.jpg" alt="Комментарий 2">
+    <img src="feedback3.jpg" alt="Комментарий 3">
+    <img src="feedback4.jpg" alt="Комментарий 4">
+  </div>
+</div>
+      </div>
+</div>
 
 <div class="container">
   <div class="section">
