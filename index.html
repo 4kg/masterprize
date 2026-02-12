@@ -170,7 +170,6 @@
 }
 
 
-}
 
 .feedback-slider:hover .feedback-track {
   animation-play-state: paused;
@@ -266,41 +265,15 @@ const slider = document.querySelector('.feedback-slider');
 const btnLeft = document.querySelector('.scroll-btn.left');
 const btnRight = document.querySelector('.scroll-btn.right');
 
-let scrollSpeed = 1; // px за шаг
-let autoScrollInterval;
-
-// Функция автопрокрутки
-//function startAutoScroll() {
-  autoScrollInterval = setInterval(() => {
-    slider.scrollLeft += scrollSpeed;
-
-    // если дошли до конца, возвращаемся в начало
-    if (slider.scrollLeft >= slider.scrollWidth - slider.clientWidth) {
-      slider.scrollLeft = 0;
-    }
-  }, 16); // ~60 FPS
-}
-
-function stopAutoScroll() {
-  clearInterval(autoScrollInterval);
-}
-
-// Стрелки
 btnLeft.addEventListener('click', () => {
-  slider.scrollBy({ left: -6000, behavior: 'smooth' });
+  slider.scrollBy({ left: -800, behavior: 'smooth' });
 });
 
 btnRight.addEventListener('click', () => {
-  slider.scrollBy({ left: 6000, behavior: 'smooth' });
+  slider.scrollBy({ left: 800, behavior: 'smooth' });
 });
-
-// Останавливаем автоскролл при наведении
-slider.addEventListener('mouseenter', stopAutoScroll);
-slider.addEventListener('mouseleave', startAutoScroll);
-
-// Запуск автоскролла
-startAutoScroll();
 </script>
+
 
 
   
