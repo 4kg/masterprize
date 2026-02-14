@@ -304,16 +304,13 @@
 
 </footer>
 
-<script>
-document.addEventListener("DOMContentLoaded", function() {
-  VK.Widgets.Group("vk_groups", {
-    mode: 3,
-    height: 300,
-    color1: "111111",
-    color2: "E4E4E4",
-    color3: "5181B8"
-  }, 233037929);
-});
+<!-- Put this script tag to the <head> of your page -->
+<script type="text/javascript" src="https://vk.com/js/api/openapi.js?168"></script>
+
+<!-- Put this div tag to the place, where the Group block will be -->
+<div id="vk_groups"></div>
+<script type="text/javascript">
+  VK.Widgets.Group("vk_groups", {mode: 3, height: 400, color1: "161616", color2: "ffffff", color3: "D4AF37"}, 233037929);
 </script>
 
 
