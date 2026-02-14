@@ -219,6 +219,31 @@
   margin-top: 2rem;
 }
 
+  .contacts-wrapper {
+  max-width: 1200px;
+  margin: 2rem auto;
+  padding: 0 1.5rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 3rem;
+}
+
+.contacts-left {
+  flex: 1;
+}
+
+.contacts-right {
+  flex: 1;
+}
+
+/* адаптив */
+@media (max-width: 900px) {
+  .contacts-wrapper {
+    flex-direction: column;
+  }
+}
+
 </style>
 </head>
 
@@ -242,13 +267,24 @@
   </div>
 </header>
 
-<div class="container">
-  <div class="section">
+<div class="contacts-wrapper">
+
+  <div class="contacts-left">
     <h1>Контакты</h1>
-    <p>   <a href="https://vk.com/baduk_win" target="_blank" style="color: #40e0d0;"> vk.ru/baduk_win </a></p>
-    <p>   masterprizemail@gmail.com </p>
+    <p>
+      <a href="https://vk.com/baduk_win" target="_blank" style="color: #40e0d0;">
+        vk.ru/baduk_win
+      </a>
+    </p>
+    <p>masterprizemail@gmail.com</p>
   </div>
+
+  <div class="contacts-right">
+    <div id="vk_groups"></div>
+  </div>
+
 </div>
+
 
   <footer>
   <div class="footer-content">
@@ -265,22 +301,8 @@
     </div>
   </div>
 
-  <div class="footer-vk">
-    <div id="vk_groups"></div>
-  </div>
-</footer>
 
-<script>
-document.addEventListener("DOMContentLoaded", function() {
-  VK.Widgets.Group("vk_groups", {
-    mode: 3,
-    height: 300,
-    color1: "111111",
-    color2: "E4E4E4",
-    color3: "5181B8"
-  }, 233037929);
-});
-</script>
+</footer>
 
 
 
