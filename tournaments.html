@@ -186,6 +186,60 @@
   box-shadow: 0 0 15px rgba(255, 204, 51, 0.4);
 }
 
+   /* ===== СТИЛИ ТАБЛИЦЫ ТУРНИРОВ ===== */
+  .tournament-table {
+    width: auto;
+    border-collapse: collapse;
+    display: table; 
+    margin: 20px auto;
+    color: #e0e0e0; /* светлый текст */
+    table-layout: auto; /* фиксированная ширина столбцов */
+  }
+
+  .tournament-table th,
+  .tournament-table td {
+    border: 1px solid #444; /* чёткая граница */
+    padding: 10px 12px;      /* внутренние отступы */
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    min-width: 120px; /* примерно 15 символов */
+  }
+
+  .tournament-table th {
+    background: #222;
+    text-align: left;
+  }
+
+  .tournament-table td:nth-child(1),
+  .tournament-table td:nth-child(3) {
+    text-align: center;
+  }
+
+  .tournament-table td:nth-child(4) {
+    text-align: right;
+  }
+
+  .tournament-table a {
+    color: #8fbcd4;
+    text-decoration: none;
+  }
+
+  .tournament-table a:hover {
+    text-decoration: underline;
+  }
+
+  .header-text h1 {
+  margin: 0;
+  color: #ffcc33;
+
+  text-shadow:
+    0 0 5px #ffcc33,
+    0 0 10px #ffcc33,
+    0 0 20px #ff9900,
+    0 0 40px #ff6600;
+}
+
 
 </style>
 </head>
