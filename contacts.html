@@ -2,252 +2,53 @@
 <html lang="ru">
 <head>
 <meta charset="UTF-8">
-<title>MASTERPRIZE | Контакты</title>
+<title>MASTERPRIZE | Го турниры</title>
 <link rel="icon" href="/favicon.ico" type="image/x-icon">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<script src="https://vk.com/js/api/openapi.js?168"></script>
+<script type="text/javascript" src="https://vk.com/js/api/openapi.js?168"></script>
+<script type="text/javascript" src="https://vk.com/js/api/share.js?93" charset="windows-1251"></script>
 
+<!-- Open Graph для VK/соцсетей -->
+<meta property="og:title" content="В Новосибирске 7 и 8 февраля 2026 г прошёл турнир MASTERPRIZE 1.0">
+<meta property="og:description" content="Хотелось бы выразить благодарность участникам турнира, которые приехали из пяти регионов России, а также главному победителю турнира - гостю из Китая Ван Сюю.">
+<meta property="og:image" content="https://raw.githubusercontent.com/4kg/masterprize/refs/heads/main/masterprize1.jpg">
+<meta property="og:url" content="https://masterprize.ru/tournament.html">
 
 <style>
-  body {
-    font-family: monospace;
-    font-size: 16px;
-    background: #161616;
-    color: #e4e4e4;
-    margin: 0;
-    line-height: 1.5;
-  }
 
-  a {
-    color: #8fbcd4;
-    text-decoration: none;
-  }
-
-  a:hover {
-    text-decoration: underline;
-  }
-
-  header {
-    position: relative;
-    height: 300px;
-    background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url("header.jpg") center / cover no-repeat;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    padding: 1rem;
-  }
-
-  .header-subtitle {
-  font-size: 18px;
-  margin-top: 10px;
-  white-space: nowrap;
-  text-align: center;
-  width: 100%;
+/* --- BODY & RESET --- */
+body {
+  font-family: monospace;
+  font-size: 16px;
+  background: #161616;
+  color: #e4e4e4;
+  margin: 0;
+  line-height: 1.5;
+  overflow-x: hidden; /* запрещаем горизонтальный скролл */
 }
 
-  nav {
-    position: relative;
-    text-align: left;
-  }
+a { color: #8fbcd4; text-decoration: none; }
+a:hover { text-decoration: underline; }
 
-  .menu-button {
-    cursor: pointer;
-    user-select: none;
-    display: inline-block;
-    padding: 0.5rem 1rem;
-    background: #222;
-    border-radius: 4px;
-    margin-bottom: 0.5rem;
-  }
-
-  .dropdown {
-    display: none;
-    position: absolute;
-    top: 2.5rem;
-    left: 0%;
-    transform: none;
-    background: #1e1e1e;
-    border: 1px solid #333;
-    padding: 0.5rem 1rem;
-    min-width: 220px;
-    border-radius: 4px;
-    z-index: 100;
-  }
-
-  nav:hover .dropdown {
-    display: block;
-  }
-
-  .dropdown a {
-    display: block;
-    padding: 0.4rem 0;
-    color: #8fbcd4;
-  }
-
-  .dropdown a.money-link {
-    font-weight: bold;
-    color: #c7a86b;
-  }
-
-  .container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 1.5rem;
-  }
-
-  section {
-    margin: 2rem 0;
-    padding: 1.5rem;
-    border: 1px solid #2a2a2a;
-    background: #1b1b1b;
-    border-radius: 4px;
-  }
-
-  .news-banner {
-    display: block;
-    padding: 1rem;
-    margin-bottom: 1.5rem;
-    background: rgba(50, 50, 50, 0.7);
-    border: 1px solid rgba(255, 255, 255, 0.2);
-    border-radius: 4px;
-    text-align: center;
-    font-weight: bold;
-  }
-
-  .news-banner a {
-    color: #fff;
-    font-size: 1.1rem;
-  }
-
-  h1, h2 {
-    margin-top: 0;
-    color: #d8d8d8;
-  }
-
-  ol {
-    padding-left: 1.2rem;
-  }
-
-  /* feedbacks slider */
-.feedback-slider {
-  overflow-x: hidden;
-  scroll-behavior: smooth; 
-  white-space: nowrap;
+/* --- HEADER --- */
+header {
   position: relative;
+  height: 300px;
+  background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url("header.jpg") center / cover no-repeat;
+  display: flex;
+  flex-direction: column;
+  padding: 1rem;
+}
+
+.header-text {
+  margin-top: auto;
   width: 100%;
-  margin-top: 1rem;
+  text-align: left;
 }
 
-  .feedback-slider-wrapper {
-  display: flex;
-  align-items: center;
-}
-
-.scroll-btn {
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  z-index: 10;
-  background: rgba(30, 30, 30, 0.8);
-  color: #fff;
-  border: none;
-  font-size: 24px;
-  padding: 0.5rem 1rem;
-  cursor: pointer;
-  border-radius: 4px;
-  user-select: none;
-}
-
-.scroll-btn.left {
-  left: 0;
-}
-
-.scroll-btn.right {
-  right: 0;
-}
-
-
-.feedback-track {
-  display: inline-flex;
-  /*animation: feedbackScroll 60s linear infinite;*/ 
-}
-
-.feedback-track img {
-  height: 150px;
-  margin-right: 20px;
-  border-radius: 6px;
-  border: 1px solid #333;
-}
-
-
-
-.feedback-slider:hover .feedback-track {
-  animation-play-state: paused;
-}
-  
-
-  footer {
-  margin-top: 5rem;
-  padding: 3rem 0;
-  background: #0f0f0f;
-  border-top: 1px solid #2f2f2f;
-}
-
-.footer-content {
-  max-width: 1200px;
-  margin: 0 auto 2rem auto;
-  padding: 0 1.5rem;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  font-size: 14px;
-  color: #999;
-}
-
-.footer-vk {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 0 1.5rem;
-}
-
-
-.footer-content a {
-  color: #8fbcd4;
-}
-
-  #vk_groups {
-  margin-top: 2rem;
-}
-
-  .contacts-wrapper {
-  max-width: 1200px;
-  margin: 2rem auto;
-  padding: 0 1.5rem;
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-start;
-  gap: 3rem;
-}
-
-.contacts-left {
-  flex: 1;
-}
-
-.contacts-right {
-  flex: 1;
-}
-
-/* адаптив */
-@media (max-width: 900px) {
-  .contacts-wrapper {
-    flex-direction: column;
-  }
-}
-
-  .header-text h1 {
+.header-text h1 {
   margin: 0;
   color: #ffcc33;
-
   text-shadow:
     0 0 5px #ffcc33,
     0 0 10px #ffcc33,
@@ -255,29 +56,264 @@
     0 0 40px #ff6600;
 }
 
+.header-subtitle {
+  font-size: 15px;
+  margin-top: 6px;
+  padding: 6px 0 8px;
+  border-top: 1px solid rgba(255,255,255,0.15);
+  color: #b5b5b5;
+  letter-spacing: 0.5px;
+}
+
+/* --- NAV DROPDOWN --- */
+nav { position: relative; text-align: left; }
+.menu-button {
+  cursor: pointer;
+  user-select: none;
+  display: inline-block;
+  padding: 0.5rem 1rem;
+  background: #222;
+  border-radius: 4px;
+  margin-bottom: 0.5rem;
+}
+.dropdown {
+  display: none;
+  position: absolute;
+  top: 2.5rem;
+  left: 0;
+  background: #1e1e1e;
+  border: 1px solid #333;
+  padding: 0.5rem 1rem;
+  min-width: 220px;
+  border-radius: 4px;
+  z-index: 100;
+}
+nav:hover .dropdown { display: block; }
+.dropdown a {
+  display: block;
+  padding: 0.4rem 0;
+  color: #8fbcd4;
+}
+
+/* --- CONTAINER --- */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem 1rem; /* меньше боковых паддингов */
+  box-sizing: border-box;
+}
+
+/* --- TOP MENU --- */
+.top-menu {
+  max-width: 1200px;
+  margin: 2rem auto;
+  padding: 0 1rem;
+  display: flex;
+  justify-content: center;
+  gap: 1.2rem;
+  flex-wrap: wrap;
+  box-sizing: border-box;
+}
+
+/* --- MENU CARDS --- */
+.menu-card {
+  background: #1c1c1c;
+  border: 1px solid #333;
+  padding: 0.8rem 1.6rem;
+  border-radius: 8px;
+  color: #e4e4e4;
+  font-size: 14px;
+  transition: 0.25s ease;
+}
+.menu-card:hover {
+  transform: translateY(-4px);
+  border-color: #ffcc33;
+  box-shadow: 0 0 20px rgba(255, 204, 51, 0.6);
+  color: #ffcc33;
+}
+.menu-card.active {
+  border-color: #ffcc33;
+  color: #ffcc33;
+  box-shadow: 0 0 15px rgba(255, 204, 51, 0.4);
+}
+
+/* --- NEWS BANNER --- */
+.news-banner {
+  margin-bottom: 2rem;
+  font-size: 14px;
+  text-align: center;
+}
+
+/* --- FEEDBACK SLIDER --- */
+.feedback-slider-wrapper {
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+  margin-bottom: 2rem;
+}
+
+.feedback-slider {
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  -webkit-overflow-scrolling: touch;
+  flex: 1;
+}
+
+.feedback-slider-wrapper {
+  display: flex;
+  align-items: center;
+  overflow: hidden; /* скрываем внешний скролл */
+  margin-bottom: 2rem;
+}
+
+.feedback-slider {
+  overflow-x: auto;              /* горизонтальный скролл */
+  scroll-behavior: smooth;
+  -webkit-overflow-scrolling: touch;
+
+  scrollbar-width: none;         /* Firefox */
+}
+
+.feedback-slider::-webkit-scrollbar {
+  display: none;                 /* Chrome, Safari, Opera */
+}
+
+.feedback-track {
+  display: flex;
+  gap: 1rem;
+}
+
+.feedback-track img {
+  height: 150px;
+  border-radius: 6px;
+  object-fit: cover;
+}
+
+/* --- SCROLL BUTTONS --- */
+.scroll-btn {
+  background: #222;
+  border: 1px solid #333;
+  color: #ffd804;
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+  border-radius: 4px;
+  margin: 0 0.5rem;
+  flex-shrink: 0;
+}
+
+/* --- ARTICLE --- */
+.article-box img {
+  float: left;           /* обтекание текста */
+  width: 50%;            /* занимает половину контейнера */
+  max-width: 50%;
+  margin-right: 1rem;    /* отступ от текста */
+  margin-bottom: 1rem;
+  border-radius: 6px;
+}
+  .article-box .article-text {
+  flex: 1; /* текст занимает оставшееся место */
+  min-width: 250px; /* минимальная ширина на мобильных */
+}
+
+  .article-box h2 {
+  margin-top: 0;
+  color: #ffcc33;
+}
+
+.article-box p {
+  margin-bottom: 1rem;
+  color: #e4e4e4;
+}
+
+/* --- GRID --- */
+.titles-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  justify-content: center;
+  gap: 1.5rem;
+}
+
+/* --- CARDS --- */
+.title-card {
+  background: #1c1c1c;
+  border: 1px solid #333;
+  border-radius: 8px;
+  padding: 0.8rem;
+  text-align: center;
+  transition: 0.3s ease;
+}
+.title-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 0 25px rgba(255, 204, 51, 0.5);
+}
+.title-card img {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+  border-radius: 6px;
+  margin-bottom: 0.8rem;
+}
+.tournament-name {
+  font-size: 13px;
+  color: #999;
+  margin-bottom: 0.2rem;
+}
+.title-name {
+  font-size: 16px;
+  font-weight: bold;
+  color: #ffcc33;
+}
+
+/* --- FOOTER --- */
+footer {
+  margin-top: 5rem;
+  padding: 3rem 1rem;
+  background: #0f0f0f;
+  border-top: 1px solid #2f2f2f;
+}
+.footer-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 14px;
+  color: #999;
+  flex-wrap: wrap;
+}
+.footer-content > div {
+  margin: 0.5rem 0;
+}
+
+  .content-box {
+  background-color: #1f1f1f; /* чуть светлее, чем фон сайта */
+  padding: 2rem;
+  border-radius: 8px;
+  margin-bottom: 2rem;
+  box-shadow: 0 0 20px 4px rgba(255, 204, 51, 0.4);
+}
+
 </style>
 </head>
-
 <body>
 
 <header>
-  <nav>
-    <span class="menu-button">MENU ▾</span>
-    <div class="dropdown">
-      <a href="index.html">Главная</a>
-      <a href="titles.html">Зал славы</a>
-      <a href="money-online.html" class="money-link">Играть онлайн</a>
-      <a href="tournaments.html">Турниры</a>
-      <a href="partners.html">Партнёры</a>
-      <a href="contacts.html">Контакты</a>
-    </div>
-  </nav>
-
   <div class="header-text">
     <h1>MASTERPRIZE</h1>
-
+    <div class="header-subtitle">
+      Свяжитесь с нами по интересующим вопросам
+    </div>
   </div>
 </header>
+
+    <div class="top-menu">
+  <a href="index.html" class="menu-card">Главная</a>
+  <a href="tournaments.html" class="menu-card">Турниры</a>
+  <a href="titles.html" class="menu-card">Титулы</a>
+  <a href="money-online.html" class="menu-card">Играть онлайн</a>
+  <a href="partners.html" class="menu-card">Партнёры</a>
+  <a href="contacts.html" class="menu-card active">Контакты</a>
+</div>
 
 <div class="contacts-wrapper">
 
