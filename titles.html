@@ -93,46 +93,46 @@
   }
 
   /* GRID */
-  .titles-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 2rem;
-  }
+.titles-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 260px); /* фиксированная ширина карточки */
+  justify-content: center; /* центрируем сетку */
+  gap: 1.5rem;
+}
 
-  .title-card {
-    background: #1c1c1c;
-    border: 1px solid #333;
-    border-radius: 10px;
-    padding: 1rem;
-    text-align: center;
-    transition: 0.3s ease;
-  }
-
+ .title-card {
+  background: #1c1c1c;
+  border: 1px solid #333;
+  border-radius: 8px;
+  padding: 0.8rem;
+  text-align: center;
+  transition: 0.3s ease;
+}
   .title-card:hover {
     transform: translateY(-6px);
     box-shadow: 0 0 25px rgba(255, 204, 51, 0.5);
   }
 
 .title-card img {
-  width: 50%;
-  aspect-ratio: 1 / 1;   /* делает квадрат */
+  width: 100%;
+  aspect-ratio: 1 / 1;
   object-fit: cover;
-  border-radius: 8px;
-  margin-bottom: 1rem;
+  border-radius: 6px;
+  margin-bottom: 0.8rem;
 }
 
 
-  .tournament-name {
-    font-size: 14px;
-    color: #999;
-    margin-bottom: 0.3rem;
-  }
+.tournament-name {
+  font-size: 13px;
+  color: #999;
+  margin-bottom: 0.2rem;
+}
 
-  .title-name {
-    font-size: 18px;
-    font-weight: bold;
-    color: #ffcc33;
-  }
+.title-name {
+  font-size: 16px;
+  font-weight: bold;
+  color: #ffcc33;
+}
 
   footer {
     margin-top: 5rem;
