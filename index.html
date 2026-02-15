@@ -184,10 +184,25 @@ nav:hover .dropdown { display: block; }
 
 /* --- ARTICLE --- */
 .article-box img {
-  width: 100%;
-  max-width: 100%;
+  flex: 0 0 50%; /* фиксируем ширину половиной контейнера */
+  max-width: 50%;
   height: auto;
+  border-radius: 6px;
+}
+
+  .article-box .article-text {
+  flex: 1; /* текст занимает оставшееся место */
+  min-width: 250px; /* минимальная ширина на мобильных */
+}
+
+  .article-box h2 {
+  margin-top: 0;
+  color: #ffcc33;
+}
+
+.article-box p {
   margin-bottom: 1rem;
+  color: #e4e4e4;
 }
 
 /* --- GRID --- */
@@ -292,8 +307,10 @@ footer {
     <button class="scroll-btn right">&#8594;</button>
   </div>
 
-  <!-- Article Block -->
-  <div class="article-box">
+<div class="article-box">
+  <img src="https://raw.githubusercontent.com/4kg/masterprize/refs/heads/main/masterprize1.jpg" alt="Турнир MASTERPRIZE 1.0">
+
+  <div class="article-text">
     <div class="share-block">
       <script type="text/javascript">
         document.write(VK.Share.button(false, {type: "round_nocount", text: "Поделиться"}));
@@ -302,13 +319,13 @@ footer {
 
     <h2>В Новосибирске 7 и 8 февраля 2026 г прошёл турнир MASTERPRIZE 1.0</h2>
 
-    <img src="https://raw.githubusercontent.com/4kg/masterprize/refs/heads/main/masterprize1.jpg" alt="Турнир MASTERPRIZE 1.0">
-
     <p>Хотелось бы выразить благодарность участникам турнира, которые приехали из пяти регионов России, а также главному победителю турнира - гостю из Китая Ван Сюю.</p>
     <p>Турнир был захватывающим и примечательным. MASTERPRIZE 1.0 проходил в современном корпусе Новосибирского Государственного Университета.</p>
     <p>Форовой формат позволил игрокам разных уровней бороться за призы в своих группах Мак-Магона. Проект ориентирован на создание условий, при которых выигрывать деньги онлайн и офлайн в Го могут игроки разного рейтинга.</p>
     <p><strong>Можно с уверенностью заявить, что турнир MASTERPRIZE 1.0 стал ярким дебютом нового призового проекта.</strong></p>
   </div>
+</div>
+
 <div class="vk-widget-wrapper">
   <div id="vk_groups"></div>
 </div>
