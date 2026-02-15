@@ -15,6 +15,7 @@
 <meta property="og:url" content="https://masterprize.ru/tournament.html">
 
 <style>
+
   body {
     font-family: monospace;
     font-size: 16px;
@@ -37,7 +38,16 @@
   }
 
   .header-text { margin-top: auto; width: 100%; text-align: left; }
-  .header-text h1 { margin: 0; }
+  .header-text h1 {
+    margin: 0;
+    color: #ffcc33;
+    text-shadow:
+      0 0 5px #ffcc33,
+      0 0 10px #ffcc33,
+      0 0 20px #ff9900,
+      0 0 40px #ff6600;
+  }
+
   .header-subtitle {
     font-size: 15px;
     margin-top: 6px;
@@ -49,100 +59,142 @@
 
   nav { position: relative; text-align: left; }
   .menu-button {
-    cursor: pointer; user-select: none;
+    cursor: pointer;
+    user-select: none;
     display: inline-block;
     padding: 0.5rem 1rem;
-    background: #222; border-radius: 4px; margin-bottom: 0.5rem;
+    background: #222;
+    border-radius: 4px;
+    margin-bottom: 0.5rem;
   }
+
   .dropdown {
-    display: none; position: absolute;
-    top: 2.5rem; left: 0;
+    display: none;
+    position: absolute;
+    top: 2.5rem;
+    left: 0;
     background: #1e1e1e;
     border: 1px solid #333;
     padding: 0.5rem 1rem;
-    min-width: 220px; border-radius: 4px; z-index: 100;
+    min-width: 220px;
+    border-radius: 4px;
+    z-index: 100;
   }
+
   nav:hover .dropdown { display: block; }
-  .dropdown a { display: block; padding: 0.4rem 0; color: #8fbcd4; }
-  .dropdown a.money-link { font-weight: bold; color: #c7a86b; }
 
-  .container { max-width: 1200px; margin: 0 auto; padding: 1.5rem; }
-
-  section { margin: 1rem 0; padding: 1rem; border: 1px solid #2a2a2a; background: #1b1b1b; border-radius: 4px; }
-
-  .news-banner {
-    display: block; padding: 1rem; margin-bottom: 0.8rem;
-    background: rgba(50,50,50,0.7); border: 1px solid rgba(255,255,255,0.2);
-    border-radius: 4px; text-align: center; font-weight: bold;
-  }
-  .news-banner a { color: #fff; font-size: 1.1rem; }
-
-  h1, h2 { margin-top: 0; color: #d8d8d8; }
-  ol { padding-left: 1.2rem; }
-
-  /* feedback slider */
-  .feedback-slider { overflow-x: hidden; scroll-behavior: smooth; white-space: nowrap; position: relative; width: 100%; margin-top: 1rem; }
-  .feedback-slider-wrapper { display: flex; align-items: center; position: relative; }
-  .scroll-btn {
-    position: absolute; top: 50%; transform: translateY(-50%);
-    z-index: 10; background: rgba(30,30,30,0.8); color: #fff; border: none;
-    font-size: 24px; padding: 0.5rem 1rem; cursor: pointer; border-radius: 4px; user-select: none;
-  }
-  .scroll-btn.left { left: 0; }
-  .scroll-btn.right { right: 0; }
-  .feedback-track { display: inline-flex; }
-  .feedback-track img { height: 150px; margin-right: 20px; border-radius: 6px; border: 1px solid #333; }
-  .feedback-slider:hover .feedback-track { animation-play-state: paused; }
-
-  footer {
-    margin-top: 5rem; padding: 3rem 0; background: #0f0f0f; border-top: 1px solid #2f2f2f;
-  }
-  .footer-content {
-    max-width: 1200px; margin: 0 auto 2rem auto; padding: 0 1.5rem;
-    display: flex; justify-content: space-between; align-items: center; font-size: 14px; color: #999;
-  }
-  .footer-vk { max-width: 1200px; margin: 0 auto; padding: 0 1.5rem; }
-  .footer-content a { color: #8fbcd4; }
-
-  /* Article Block */
-  .article-box {
-    max-width: 1000px; margin: 0.3rem auto;
-    padding: 2rem 1rem 1rem 1rem;
-    background: #1c1c1c; border: 1px solid #333; border-radius: 8px;
-    box-shadow: 0 0 30px rgba(0,0,0,0.4); position: relative; overflow: hidden;
-  }
-  .article-box h2 { margin-bottom: 1rem; color: #d8d8d8; }
-  .article-box p { line-height: 1.5; color: #e4e4e4; }
-  .article-box img { float: left; width: 500px; max-width: 100%; margin: 0 1.5rem 1rem 0; border-radius: 6px; }
-
-  /* Share block */
-  .share-block {
-    text-align: right; border-top: 1px solid #333;
-    padding-top: 0.5rem; margin-bottom: 1.5rem;
+  .dropdown a {
+    display: block;
+    padding: 0.4rem 0;
+    color: #8fbcd4;
   }
 
-.vk-widget-wrapper {
-  max-width: 1000px;
-  margin: 0.5rem auto 0 auto;
-  padding: 1rem;
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem 1.5rem;
+  }
+
+  h2 {
+    text-align: center;
+    margin-bottom: 2.5rem;
+    color: #d8d8d8;
+  }
+
+  /* GRID */
+.titles-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 260px); /* фиксированная ширина карточки */
+  justify-content: center; /* центрируем сетку */
+  gap: 1.5rem;
+}
+
+ .title-card {
   background: #1c1c1c;
   border: 1px solid #333;
   border-radius: 8px;
-  display: flex;
-  justify-content: flex-end;
+  padding: 0.8rem;
+  text-align: center;
+  transition: 0.3s ease;
+}
+  .title-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 0 25px rgba(255, 204, 51, 0.5);
+  }
+
+.title-card img {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+  border-radius: 6px;
+  margin-bottom: 0.8rem;
 }
 
-  .header-text h1 {
-  margin: 0;
+
+.tournament-name {
+  font-size: 13px;
+  color: #999;
+  margin-bottom: 0.2rem;
+}
+
+.title-name {
+  font-size: 16px;
+  font-weight: bold;
   color: #ffcc33;
-
-  text-shadow:
-    0 0 5px #ffcc33,
-    0 0 10px #ffcc33,
-    0 0 20px #ff9900,
-    0 0 40px #ff6600;
 }
 
+  footer {
+    margin-top: 5rem;
+    padding: 3rem 0;
+    background: #0f0f0f;
+    border-top: 1px solid #2f2f2f;
+  }
+
+  .footer-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1.5rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 14px;
+    color: #999;
+  }
+
+  /* Горизонтальное меню под header */
+
+.top-menu {
+  max-width: 1200px;
+  margin: 2rem auto 2rem auto;   /* убрали минус */
+  padding: 0 1.5rem;
+  display: flex;
+  justify-content: center;
+  gap: 1.2rem;
+  flex-wrap: wrap;
+}
+
+.menu-card {
+  background: #1c1c1c;
+  border: 1px solid #333;
+  padding: 0.8rem 1.6rem;
+  border-radius: 8px;
+  color: #e4e4e4;
+  font-size: 14px;
+  transition: 0.25s ease;
+}
+
+.menu-card:hover {
+  transform: translateY(-4px);
+  border-color: #ffcc33;
+  box-shadow: 0 0 20px rgba(255, 204, 51, 0.6);
+  color: #ffcc33;
+}
+
+.menu-card.active {
+  border-color: #ffcc33;
+  color: #ffcc33;
+  box-shadow: 0 0 15px rgba(255, 204, 51, 0.4);
+}
 
 
 
