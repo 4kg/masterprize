@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<title>Титулы | MASTERPRIZE</title>
+<link rel="icon" href="/favicon.ico" type="image/x-icon">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<style>
+  body {
+    font-family: monospace;
+    font-size: 16px;
+    background: #161616;
+    color: #e4e4e4;
+    margin: 0;
+    line-height: 1.5;
+  }
+
+  a { color: #8fbcd4; text-decoration: none; }
+  a:hover { text-decoration: underline; }
+
+  header {
+    position: relative;
+    height: 300px;
+    background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url("header.jpg") center / cover no-repeat;
+    display: flex;
+    flex-direction: column;
+    padding: 1rem;
+  }
+
+  .header-text { margin-top: auto; width: 100%; text-align: left; }
+  .header-text h1 {
+    margin: 0;
+    color: #ffcc33;
+    text-shadow:
+      0 0 5px #ffcc33,
+      0 0 10px #ffcc33,
+      0 0 20px #ff9900,
+      0 0 40px #ff6600;
+  }
+
+  .header-subtitle {
+    font-size: 15px;
+    margin-top: 6px;
+    padding: 6px 0 8px;
+    border-top: 1px solid rgba(255,255,255,0.15);
+    color: #b5b5b5;
+    letter-spacing: 0.5px;
+  }
+
+  nav { position: relative; text-align: left; }
+  .menu-button {
+    cursor: pointer;
+    user-select: none;
+    display: inline-block;
+    padding: 0.5rem 1rem;
+    background: #222;
+    border-radius: 4px;
+    margin-bottom: 0.5rem;
+  }
+
+  .dropdown {
+    display: none;
+    position: absolute;
+    top: 2.5rem;
+    left: 0;
+    background: #1e1e1e;
+    border: 1px solid #333;
+    padding: 0.5rem 1rem;
+    min-width: 220px;
+    border-radius: 4px;
+    z-index: 100;
+  }
+
+  nav:hover .dropdown { display: block; }
+
+  .dropdown a {
+    display: block;
+    padding: 0.4rem 0;
+    color: #8fbcd4;
+  }
+
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem 1.5rem;
+  }
+
+  h2 {
+    text-align: center;
+    margin-bottom: 2.5rem;
+    color: #d8d8d8;
+  }
+
+  /* GRID */
+  .titles-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+  }
+
+  .title-card {
+    background: #1c1c1c;
+    border: 1px solid #333;
+    border-radius: 10px;
+    padding: 1rem;
+    text-align: center;
+    transition: 0.3s ease;
+  }
+
+  .title-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 0 25px rgba(255, 204, 51, 0.5);
+  }
+
+  .title-card img {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+    border-radius: 8px;
+    margin-bottom: 1rem;
+  }
+
+  .tournament-name {
+    font-size: 14px;
+    color: #999;
+    margin-bottom: 0.3rem;
+  }
+
+  .title-name {
+    font-size: 18px;
+    font-weight: bold;
+    color: #ffcc33;
+  }
+
+  footer {
+    margin-top: 5rem;
+    padding: 3rem 0;
+    background: #0f0f0f;
+    border-top: 1px solid #2f2f2f;
+  }
+
+  .footer-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1.5rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 14px;
+    color: #999;
+  }
+
+</style>
+</head>
+<body>
+
+<header>
+  <nav>
+    <span class="menu-button">MENU ▾</span>
+    <div class="dropdown">
+      <a href="index.html">Главная</a>
+      <a href="tournaments.html">Турниры</a>
+      <a href="titles.html">Титулы</a>
+      <a href="contacts.html">Контакты</a>
+    </div>
+  </nav>
+
+  <div class="header-text">
+    <h1>MASTERPRIZE</h1>
+    <div class="header-subtitle">
+      Призовые титулы и чемпионы проекта
+    </div>
+  </div>
+</header>
+
+<div class="container">
+
+  <h2>Титулы MASTERPRIZE</h2>
+
+  <div class="titles-grid">
+
+    <div class="title-card">
+      <img src="player1.jpg" alt="Игрок">
+      <div class="tournament-name">MASTERPRIZE 1.0</div>
+      <div class="title-name">Чемпион</div>
+    </div>
+
+    <div class="title-card">
+      <img src="player2.jpg" alt="Игрок">
+      <div class="tournament-name">MASTERPRIZE 2.0</div>
+      <div class="title-name">Вице-чемпион</div>
+    </div>
+
+    <div class="title-card">
+      <img src="player3.jpg" alt="Игрок">
+      <div class="tournament-name">Онлайн Кубок</div>
+      <div class="title-name">Победитель</div>
+    </div>
+
+    <div class="title-card">
+      <img src="player4.jpg" alt="Игрок">
+      <div class="tournament-name">Зимний Турнир</div>
+      <div class="title-name">Чемпион</div>
+    </div>
+
+    <div class="title-card">
+      <img src="player5.jpg" alt="Игрок">
+      <div class="tournament-name">Осенний Турнир</div>
+      <div class="title-name">Победитель</div>
+    </div>
+
+    <div class="title-card">
+      <img src="player6.jpg" alt="Игрок">
+      <div class="tournament-name">Весенний Кубок</div>
+      <div class="title-name">Чемпион</div>
+    </div>
+
+    <div class="title-card">
+      <img src="player7.jpg" alt="Игрок">
+      <div class="tournament-name">Blitz MASTERPRIZE</div>
+      <div class="title-name">Победитель</div>
+    </div>
+
+    <div class="title-card">
+      <img src="player8.jpg" alt="Игрок">
+      <div class="tournament-name">Летний Кубок</div>
+      <div class="title-name">Чемпион</div>
+    </div>
+
+    <div class="title-card">
+      <img src="player9.jpg" alt="Игрок">
+      <div class="tournament-name">Grand Final</div>
+      <div class="title-name">Абсолютный чемпион</div>
+    </div>
+
+  </div>
+
+</div>
+
+<footer>
+  <div class="footer-content">
+    <div>© 2026 MASTERPRIZE</div>
+    <div>Призовые турниры по Го</div>
+    <div><a href="contacts.html">Контакты</a></div>
+  </div>
+</footer>
+
+</body>
+</html>
