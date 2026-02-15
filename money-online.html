@@ -148,29 +148,63 @@
     0 0 40px #ff6600;
 }
 
+    /* Горизонтальное меню под header */
+
+.top-menu {
+  max-width: 1200px;
+  margin: 2rem auto 2rem auto;   /* убрали минус */
+  padding: 0 1.5rem;
+  display: flex;
+  justify-content: center;
+  gap: 1.2rem;
+  flex-wrap: wrap;
+}
+
+.menu-card {
+  background: #1c1c1c;
+  border: 1px solid #333;
+  padding: 0.8rem 1.6rem;
+  border-radius: 8px;
+  color: #e4e4e4;
+  font-size: 14px;
+  transition: 0.25s ease;
+}
+
+.menu-card:hover {
+  transform: translateY(-4px);
+  border-color: #ffcc33;
+  box-shadow: 0 0 20px rgba(255, 204, 51, 0.6);
+  color: #ffcc33;
+}
+
+.menu-card.active {
+  border-color: #ffcc33;
+  color: #ffcc33;
+  box-shadow: 0 0 15px rgba(255, 204, 51, 0.4);
+}
+
+
 </style>
 </head>
 
 <body>
 
 <header>
-  <nav>
-    <span class="menu-button">MENU ▾</span>
-    <div class="dropdown">
-      <a href="index.html">Главная</a>
-      <a href="titles.html">Зал славы</a>
-      <a href="money-online.html" class="money-link">Играть онлайн</a>
-      <a href="tournaments.html">Турниры</a>
-      <a href="partners.html">Партнёры</a>
-      <a href="contacts.html">Контакты</a>
-    </div>
-  </nav>
 
   <div class="header-text">
     <h1>MASTERPRIZE</h1>
 
   </div>
 </header>
+
+      <div class="top-menu">
+  <a href="index.html" class="menu-card">Главная</a>
+  <a href="tournaments.html" class="menu-card">Турниры</a>
+  <a href="titles.html" class="menu-card">Титулы</a>
+  <a href="money-online.html" class="menu-card active">Играть онлайн</a>
+  <a href="money-online.html" class="menu-card">Партнёры</a>
+  <a href="contacts.html" class="menu-card">Контакты</a>
+</div>
 
 <div class="container">
 
