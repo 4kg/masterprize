@@ -125,7 +125,7 @@ nav:hover .dropdown { display: block; }
   font-size: 14px;
   transition: 0.25s ease;
 }
-.menu-card:hover {
+.menu-card:not(.brand-glow):hover {
   transform: translateY(-4px);
   border-color: #ffcc33;
   box-shadow: 0 0 20px rgba(255, 204, 51, 0.6);
@@ -340,6 +340,12 @@ footer {
   height: 6px; /* чуть выше, чтобы glow заметен */
   box-shadow: 0 0 20px rgba(0,180,255,0.8),
               0 0 30px rgba(0,120,255,0.5);
+}
+  .menu-card.brand-glow:hover {
+  transform: translateY(-4px);
+  border-color: rgba(0,150,255,0.6);
+  box-shadow: 0 0 20px rgba(0,180,255,0.6);
+  color: #8fbcd4;
 }
 
 
