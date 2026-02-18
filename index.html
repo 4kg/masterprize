@@ -294,6 +294,33 @@ footer {
   margin-bottom: 2rem;
   box-shadow: 0 0 20px 4px rgba(255, 204, 51, 0.4);
 }
+
+  /* --- Специальная подсветка для кнопки "Бренд-интеграция" --- */
+.menu-card.brand-glow {
+  position: relative; /* для псевдоэлемента */
+  transition: 0.3s ease;
+}
+
+.menu-card.brand-glow::after {
+  content: "";
+  position: absolute;
+  left: 10%;
+  right: 10%;
+  bottom: -4px; /* чуть ниже кнопки */
+  height: 4px;
+  background: rgba(0, 150, 255, 0.8); /* яркий синий */
+  border-radius: 2px;
+  box-shadow: 0 0 12px rgba(0, 180, 255, 0.6),
+              0 0 20px rgba(0, 120, 255, 0.4);
+  transition: 0.3s ease;
+}
+
+.menu-card.brand-glow:hover::after {
+  height: 6px;
+  box-shadow: 0 0 20px rgba(0, 180, 255, 0.8),
+              0 0 30px rgba(0, 120, 255, 0.5);
+}
+
 </style>
 </head>
 <body>
@@ -312,7 +339,7 @@ footer {
   <a href="tournaments.html" class="menu-card">Турниры</a>
   <a href="titles.html" class="menu-card">Титулы</a>
   <a href="money-online.html" class="menu-card">Играть онлайн</a>
-  <a href="money-online.html" class="menu-card">Бренд-интеграция</a>
+<a href="money-online.html" class="menu-card brand-glow">Бренд-интеграция</a>
   <a href="contacts.html" class="menu-card">Контакты</a>
 </div>
 
@@ -368,6 +395,8 @@ footer {
     color2: "3a3a3a",
     color3: "b39904"
   }, 233037929);
+
+  
 </script>
 
   
