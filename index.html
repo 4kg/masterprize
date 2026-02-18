@@ -296,14 +296,14 @@ footer {
 }
 
 
-/* --- Базовый стиль кнопки с синим glow --- */
+/* --- Базовый стиль glow --- */
 .menu-card.brand-glow {
   position: relative;
-  z-index: 1; /* для надёжности */
+  z-index: 1;
   transition: 0.3s ease;
+  overflow: visible; /* чтобы glow не обрезался */
 }
 
-/* --- Псевдоэлемент свечения снизу --- */
 .menu-card.brand-glow::after {
   content: "";
   position: absolute;
@@ -311,35 +311,35 @@ footer {
   right: 10%;
   bottom: -4px;
   height: 4px;
-  background: rgba(0, 150, 255, 0.8);
+  background: rgba(0,150,255,0.8);
   border-radius: 2px;
-  box-shadow: 0 0 12px rgba(0, 180, 255, 0.6),
-              0 0 20px rgba(0, 120, 255, 0.4);
+  box-shadow: 0 0 12px rgba(0,180,255,0.6),
+              0 0 20px rgba(0,120,255,0.4);
   transition: 0.3s ease, height 0.3s ease, box-shadow 0.3s ease;
-  pointer-events: none; /* чтобы не мешал клику */
-  z-index: 2; /* поверх кнопки */
+  pointer-events: none;
+  z-index: 2;
 }
 
 /* --- Hover эффект --- */
 .menu-card.brand-glow:hover::after {
   height: 6px;
-  box-shadow: 0 0 20px rgba(0, 180, 255, 0.8),
-              0 0 30px rgba(0, 120, 255, 0.5);
+  box-shadow: 0 0 20px rgba(0,180,255,0.8),
+              0 0 30px rgba(0,120,255,0.5);
 }
 
 /* --- Active / выбранное состояние --- */
 .menu-card.brand-glow.active {
-  color: #8fbcd4; /* текст можно оставить синим */
-  border-color: rgba(0, 150, 255, 0.6);
-  box-shadow: 0 0 15px rgba(0, 180, 255, 0.4);
+  color: #8fbcd4;
+  border-color: rgba(0,150,255,0.6);
+  box-shadow: 0 0 15px rgba(0,180,255,0.4);
 }
 
-/* --- Псевдоэлемент активной кнопки --- */
+/* --- Активный glow для ::after --- */
 .menu-card.brand-glow.active::after {
-  background: rgba(0, 150, 255, 0.8);
-  box-shadow: 0 0 15px rgba(0, 180, 255, 0.6),
-              0 0 25px rgba(0, 120, 255, 0.5);
-  height: 6px;
+  background: rgba(0,150,255,0.8);
+  height: 6px; /* чуть выше, чтобы glow заметен */
+  box-shadow: 0 0 20px rgba(0,180,255,0.8),
+              0 0 30px rgba(0,120,255,0.5);
 }
 
 
