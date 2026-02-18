@@ -345,7 +345,13 @@ footer {
   0 0 30px rgba(0, 120, 70, 0.35);
 }
 
-  /* Мягкая аура */
+  .menu-card.brand-glow {
+  position: relative;
+  overflow: visible;
+  transition: 0.35s ease;
+}
+
+/* Мягкая аура */
 .menu-card.brand-glow::before {
   content: "";
   position: absolute;
@@ -398,7 +404,6 @@ footer {
 .menu-card.brand-glow {
   animation: neonPulse 3.5s ease-in-out infinite;
 }
-
 
 
 
