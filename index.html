@@ -345,6 +345,17 @@ footer {
   filter: blur(20px);
 }
 
+  @keyframes neonPulse {
+  0% { box-shadow: 0 0 10px rgba(0,150,255,0.4), inset 0 0 6px rgba(0,180,255,0.2); }
+  50% { box-shadow: 0 0 18px rgba(0,180,255,0.6), inset 0 0 10px rgba(0,200,255,0.3); }
+  100% { box-shadow: 0 0 10px rgba(0,150,255,0.4), inset 0 0 6px rgba(0,180,255,0.2); }
+}
+
+.menu-card.brand-glow {
+  animation: neonPulse 3.5s ease-in-out infinite;
+}
+
+
 
 
 </style>
