@@ -244,7 +244,13 @@ animation: goldFlow 6s linear infinite, goldPulse 4s ease-in-out infinite;
   box-shadow: 0 0 20px 4px rgba(255, 204, 51, 0.4);
 }
 
-  /* Мягкая аура */
+  .menu-card.brand-glow {
+  position: relative;
+  overflow: visible;
+  transition: 0.35s ease;
+}
+
+/* Мягкая аура */
 .menu-card.brand-glow::before {
   content: "";
   position: absolute;
@@ -297,8 +303,6 @@ animation: goldFlow 6s linear infinite, goldPulse 4s ease-in-out infinite;
 .menu-card.brand-glow {
   animation: neonPulse 3.5s ease-in-out infinite;
 }
-
-
 
 
 
