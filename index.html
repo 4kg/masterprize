@@ -58,6 +58,18 @@ header {
   padding: 1rem;
 }
 
+  header::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(
+    ellipse at center,
+    transparent 40%,
+    rgba(0,0,0,0.35) 100%
+  );
+  pointer-events: none;
+}
+
 .header-text {
   margin-top: auto;
   width: 100%;
