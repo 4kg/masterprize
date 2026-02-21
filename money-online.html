@@ -165,16 +165,25 @@ nav:hover .dropdown { display: block; }
   font-size: 14px;
   transition: 0.25s ease;
 }
+/* hover — только для обычных кнопок */
 .menu-card:not(.brand-glow):hover {
-  transform: translateY(-4px);
-  border-color: #ffcc33;
-  box-shadow: 0 0 20px rgba(255, 204, 51, 0.6);
-  color: #ffcc33;
+  transform: translateY(-3px);
+  border-color: #c8a96a;
+  color: #e7d3a3;
+
+  box-shadow:
+    0 6px 18px rgba(0,0,0,0.45),
+    0 0 12px rgba(200,169,106,0.22);
 }
-.menu-card.active {
-  border-color: #ffcc33;
-  color: #ffcc33;
-  box-shadow: 0 0 15px rgba(255, 204, 51, 0.4);
+
+/* active — тоже без неона */
+.menu-card.active:not(.brand-glow) {
+  border-color: #c8a96a;
+  color: #e7d3a3;
+
+  box-shadow:
+    0 0 10px rgba(200,169,106,0.18),
+    inset 0 0 6px rgba(200,169,106,0.12);
 }
 
 /* --- NEWS BANNER --- */
