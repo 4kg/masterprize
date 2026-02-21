@@ -352,34 +352,38 @@ footer {
   margin: 0 auto 2rem;
   background-color: #1f1f1f; /* чуть светлее, чем фон сайта */
   padding: 2rem;
-  border-radius: 8px;
+  border-radius: 16px;
   margin-bottom: 2rem;
   box-shadow:
     0 18px 40px rgba(0,0,0,0.55),      /* глубина */
     0 0 22px rgba(200,169,106,0.22);   /* мягкое золото */
 }
 
-   .content-box-green {
-  background-color: #1f1f1f; /* чуть светлее, чем фон сайта */
+.content-box-green {
+  background-color: #1f1f1f;
   padding: 2rem;
-  border-radius: 8px;
+  border-radius: 16px;
   margin-bottom: 2rem;
- box-shadow:
-  0 0 12px rgba(0, 200, 120, 0.5),
-  0 0 30px rgba(0, 120, 70, 0.35);
+
+  box-shadow:
+    0 18px 40px rgba(0,0,0,0.55),      /* глубина как у золотого */
+    0 0 22px rgba(60,180,120,0.22);    /* мягкий зелёный акцент */
+
+  border: 1px solid rgba(60,180,120,0.28);
 }
 
-  .content-box-blue {
-  background-color: #1a1a2e; /* чуть светлее темного фона, но синим подтоном */
+.content-box-blue {
+  background-color: #1a1a2e;
   padding: 2rem;
-  border-radius: 8px;
+  border-radius: 16px;
   margin-bottom: 2rem;
+
   box-shadow:
-    0 0 12px rgba(0, 150, 255, 0.6),
-    0 0 30px rgba(0, 100, 255, 0.35),
-    0 0 60px rgba(0, 180, 255, 0.2);
-  border: 1px solid rgba(0, 150, 255, 0.5);
-  color: #e0f7ff; /* светлый текст для контраста */
+    0 18px 40px rgba(0,0,0,0.55),      /* глубина */
+    0 0 24px rgba(0,150,255,0.22);     /* цвет как у brand-glow */
+
+  border: 1px solid rgba(0,150,255,0.32);
+  color: #e0f7ff;
 }
 
   .menu-card.brand-glow {
