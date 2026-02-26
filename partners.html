@@ -2,516 +2,239 @@
 <html lang="ru">
 <head>
 <meta charset="UTF-8">
-<title>MASTERPRIZE | Бренды, интеграции и реклама</title>
-<link rel="icon" href="/favicon.ico" type="image/x-icon">
+<title>MASTERPRIZE | Бренд-интеграции в интеллектуальный спорт</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<script type="text/javascript" src="https://vk.com/js/api/openapi.js?168"></script>
-<script type="text/javascript" src="https://vk.com/js/api/share.js?93" charset="windows-1251"></script>
 
-<!-- Open Graph для VK/соцсетей -->
-<meta property="og:title" content="В Новосибирске 7 и 8 февраля 2026 г прошёл турнир MASTERPRIZE 1.0">
-<meta property="og:description" content="Хотелось бы выразить благодарность участникам турнира, которые приехали из пяти регионов России, а также главному победителю турнира - гостю из Китая Ван Сюю.">
+<meta property="og:title" content="Интеграция брендов в турниры MASTERPRIZE">
+<meta property="og:description" content="Нативная реклама через турниры по Го. Аудитория интеллектуальных игроков и зрителей.">
 <meta property="og:image" content="https://raw.githubusercontent.com/4kg/masterprize/refs/heads/main/masterprize1.jpg">
-<meta property="og:url" content="https://masterprize.ru/tournament.html">
 
 <style>
+body{
+  font-family: ui-sans-serif, Arial, sans-serif;
+  background:#121212;
+  color:#e6e6e6;
+  margin:0;
+  line-height:1.5;
+}
+.container{
+  max-width:1200px;
+  margin:0 auto;
+  padding:3rem 1rem;
+}
+.section{margin-bottom:3.5rem}
+h1,h2,h3{margin-top:0}
 
-/* --- BODY & RESET --- */
-body {
-  font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
-  font-size: 16px;
-  background: #161616;
-  color: #e4e4e4;
-  margin: 0;
-  line-height: 1.5;
-  overflow-x: hidden; /* запрещаем горизонтальный скролл */
+/* HERO */
+.hero{
+  background:linear-gradient(rgba(0,0,0,.7),rgba(0,0,0,.7)),url("header.jpg") center/cover no-repeat;
+  padding:5rem 1rem;
+  text-align:center;
+}
+.hero h1{
+  font-size:44px;
+  color:#ffcc33;
+  margin-bottom:.8rem;
+}
+.hero p{
+  max-width:760px;
+  margin:0 auto 2rem;
+  color:#b9b9b9;
 }
 
-a { color: #8fbcd4; text-decoration: none; }
-a:hover { text-decoration: underline; }
-
-/* --- HEADER --- */
-header {
-  position: relative;
-  height: 300px;
-  background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url("header.jpg") center / cover no-repeat;
-  display: flex;
-  flex-direction: column;
-  padding: 1rem;
+/* CTA */
+.cta{
+  display:inline-block;
+  background:#ffcc33;
+  color:#000;
+  padding:15px 30px;
+  border-radius:12px;
+  font-weight:700;
+  text-decoration:none;
+  transition:.25s;
+}
+.cta:hover{
+  transform:translateY(-2px);
+  box-shadow:0 10px 30px rgba(255,204,51,.35);
 }
 
-  header::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: radial-gradient(
-    ellipse at center,
-    transparent 40%,
-    rgba(0,0,0,0.35) 100%
-  );
-  pointer-events: none;
+/* GRID */
+.grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
+  gap:1.3rem;
+}
+.card{
+  background:#1b1b1b;
+  border:1px solid #2f2f2f;
+  border-radius:14px;
+  padding:1.5rem;
 }
 
-.header-text {
-  margin-top: auto;
-  width: 100%;
-  text-align: left;
+/* KPI */
+.kpi{
+  font-size:34px;
+  color:#ffcc33;
+  font-weight:700;
 }
 
-.header-text h1 {
-  margin: 0;
-  font-weight: 700;
-  letter-spacing: 2px;
-  animation: goldFlow 8s linear infinite, goldPulse 6s ease-in-out infinite;
-  background: linear-gradient(
-    90deg,
-    #fff6c2 0%,
-    #ffcc33 25%,
-    #ff9900 50%,
-    #ffcc33 75%,
-    #fff6c2 100%
-  );
-
-  background-size: 200% auto;
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-
-  text-shadow:
-    0 0 10px rgba(255, 204, 51, 0.6),
-    0 0 25px rgba(255, 153, 0, 0.4);
-}
-@keyframes goldFlow {
-  0% {
-    background-position: 0% center;
-  }
-  100% {
-    background-position: 200% center;
-  }
+/* PACKAGE */
+.package{
+  background:#171a2a;
+  border:1px solid rgba(0,150,255,.35);
+  border-radius:16px;
+  padding:1.6rem;
 }
 
-  @keyframes goldPulse {
-  0% {
-    text-shadow:
-      0 0 8px rgba(255, 204, 51, 0.5),
-      0 0 20px rgba(255, 153, 0, 0.3);
-  }
-  50% {
-    text-shadow:
-      0 0 18px rgba(255, 204, 51, 0.8),
-      0 0 35px rgba(255, 153, 0, 0.5);
-  }
-  100% {
-    text-shadow:
-      0 0 8px rgba(255, 204, 51, 0.5),
-      0 0 20px rgba(255, 153, 0, 0.3);
-  }  }
-
-
-
-.header-subtitle {
-  font-size: 15px;
-  margin-top: 6px;
-  padding: 6px 0 8px;
-  border-top: 1px solid rgba(255,255,255,0.15);
-  color: #b5b5b5;
-  letter-spacing: 0.5px;
+/* LOGOS */
+.logos{
+  display:flex;
+  flex-wrap:wrap;
+  gap:2.5rem;
+  justify-content:center;
+  opacity:.9;
 }
 
-/* --- NAV DROPDOWN --- */
-nav { position: relative; text-align: left; }
-.menu-button {
-  cursor: pointer;
-  user-select: none;
-  display: inline-block;
-  padding: 0.5rem 1rem;
-  background: #222;
-  border-radius: 4px;
-  margin-bottom: 0.5rem;
+/* PROCESS */
+.step{
+  position:relative;
+  padding-left:28px;
 }
-.dropdown {
-  display: none;
-  position: absolute;
-  top: 2.5rem;
-  left: 0;
-  background: #1e1e1e;
-  border: 1px solid #333;
-  padding: 0.5rem 1rem;
-  min-width: 220px;
-  border-radius: 4px;
-  z-index: 100;
-}
-nav:hover .dropdown { display: block; }
-.dropdown a {
-  display: block;
-  padding: 0.4rem 0;
-  color: #8fbcd4;
+.step::before{
+  content:"•";
+  position:absolute;
+  left:0;
+  color:#ffcc33;
+  font-size:26px;
+  top:-2px;
 }
 
-/* --- CONTAINER --- */
-.container {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 2.5rem 1rem; /* меньше боковых паддингов */
-  box-sizing: border-box;
+/* FAQ */
+.faq-item{
+  border-bottom:1px solid #2a2a2a;
+  padding:1rem 0;
 }
 
-/* --- TOP MENU --- */
-.top-menu {
-  max-width: 1200px;
-  margin: 2.5rem auto;
-  padding: 0 1rem;
-  display: flex;
-  justify-content: center;
-  gap: 1.2rem;
-  flex-wrap: wrap;
-  box-sizing: border-box;
+/* STICKY CTA */
+.sticky-cta{
+  position:fixed;
+  right:20px;
+  bottom:20px;
+  background:#ffcc33;
+  color:#000;
+  padding:14px 20px;
+  border-radius:999px;
+  font-weight:700;
+  text-decoration:none;
+  box-shadow:0 10px 25px rgba(0,0,0,.5);
 }
 
-/* --- MENU CARDS --- */
-.menu-card {
-  background: #1c1c1c;
-  border: 1px solid #333;
-  padding: 0.8rem 1.6rem;
-  border-radius: 10px;
-  color: #e4e4e4;
-  font-size: 14px;
-  transition: 0.25s ease;
+/* FOOTER */
+footer{
+  background:#0b0b0b;
+  border-top:1px solid #262626;
+  padding:2rem 1rem;
+  text-align:center;
+  color:#888;
 }
-
-/* hover — только для обычных кнопок */
-.menu-card:not(.brand-glow):hover {
-  transform: translateY(-3px);
-  border-color: #c8a96a;
-  color: #e7d3a3;
-
-  box-shadow:
-    0 6px 18px rgba(0,0,0,0.45),
-    0 0 12px rgba(200,169,106,0.22);
-}
-
-/* active — тоже без неона */
-.menu-card.active:not(.brand-glow) {
-  border-color: #c8a96a;
-  color: #e7d3a3;
-
-  box-shadow:
-    0 0 10px rgba(200,169,106,0.18),
-    inset 0 0 6px rgba(200,169,106,0.12);
-}
-
-/* --- NEWS BANNER --- */
-.news-banner {
-  margin-bottom: 2rem;
-  font-size: 14px;
-  text-align: center;
-}
-
-/* --- FEEDBACK SLIDER --- */
-.feedback-slider-wrapper {
-  display: flex;
-  align-items: center;
-  overflow: hidden;
-  margin-bottom: 2rem;
-}
-
-.feedback-slider {
-  overflow-x: auto;
-  scroll-behavior: smooth;
-  -webkit-overflow-scrolling: touch;
-  flex: 1;
-}
-
-.feedback-slider-wrapper {
-  display: flex;
-  align-items: center;
-  overflow: hidden; /* скрываем внешний скролл */
-  margin-bottom: 2rem;
-}
-
-.feedback-slider {
-  overflow-x: auto;              /* горизонтальный скролл */
-  scroll-behavior: smooth;
-  -webkit-overflow-scrolling: touch;
-
-  scrollbar-width: none;         /* Firefox */
-}
-
-.feedback-slider::-webkit-scrollbar {
-  display: none;                 /* Chrome, Safari, Opera */
-}
-
-.feedback-track {
-  display: flex;
-  gap: 1rem;
-}
-
-.feedback-track img {
-  height: 150px;
-  border-radius: 6px;
-  object-fit: cover;
-}
-
-/* --- SCROLL BUTTONS --- */
-.scroll-btn {
-  background: #222;
-  border: 1px solid #333;
-  color: #ffd804;
-  padding: 0.5rem 1rem;
-  cursor: pointer;
-  border-radius: 4px;
-  margin: 0 0.5rem;
-  flex-shrink: 0;
-}
-
-/* --- ARTICLE --- */
-.article-box img {
-  float: left;           /* обтекание текста */
-  width: 50%;            /* занимает половину контейнера */
-  max-width: 50%;
-  margin-right: 1rem;    /* отступ от текста */
-  margin-bottom: 1rem;
-  border-radius: 6px;
-}
-  .article-box .article-text {
-  flex: 1; /* текст занимает оставшееся место */
-  min-width: 250px; /* минимальная ширина на мобильных */
-}
-
-  .article-box h2 {
-  margin-top: 0;
-  color: #ffcc33;
-}
-
-.article-box p {
-  margin-bottom: 1rem;
-  color: #e4e4e4;
-}
-
-/* --- GRID --- */
-.titles-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-  justify-content: center;
-  gap: 1.5rem;
-}
-
-/* --- CARDS --- */
-.title-card {
-  background: #1c1c1c;
-  border: 1px solid #333;
-  border-radius: 8px;
-  padding: 0.8rem;
-  text-align: center;
-  transition: 0.3s ease;
-}
-.title-card:hover {
-  transform: translateY(-6px);
-  box-shadow: 0 0 25px rgba(255, 204, 51, 0.5);
-}
-.title-card img {
-  width: 100%;
-  aspect-ratio: 1 / 1;
-  object-fit: cover;
-  border-radius: 6px;
-  margin-bottom: 0.8rem;
-}
-.tournament-name {
-  font-size: 13px;
-  color: #999;
-  margin-bottom: 0.2rem;
-}
-.title-name {
-  font-size: 16px;
-  font-weight: bold;
-  color: #ffcc33;
-}
-
-/* --- FOOTER --- */
-footer {
-  margin-top: 5rem;
-  padding: 3rem 1rem;
-  background: #0f0f0f;
-  border-top: 1px solid #2f2f2f;
-}
-.footer-content {
-  max-width: 1200px;
-  margin: 0 auto;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  font-size: 14px;
-  color: #999;
-  flex-wrap: wrap;
-}
-.footer-content > div {
-  margin: 0.5rem 0;
-}
-
-  .content-box {
-  max-width: 1200px;
-  margin: 0 auto 2rem;
-  background-color: #1f1f1f; /* чуть светлее, чем фон сайта */
-  padding: 2rem;
-  border-radius: 16px;
-  margin-bottom: 2rem;
-  box-shadow:
-    0 18px 40px rgba(0,0,0,0.55),      /* глубина */
-    0 0 22px rgba(200,169,106,0.22);   /* мягкое золото */
-}
-
-.content-box-green {
-  background-color: #1f1f1f;
-  padding: 2rem;
-  border-radius: 16px;
-  margin-bottom: 2rem;
-
-  box-shadow:
-    0 18px 40px rgba(0,0,0,0.55),      /* глубина как у золотого */
-    0 0 22px rgba(60,180,120,0.22);    /* мягкий зелёный акцент */
-
-  border: 1px solid rgba(60,180,120,0.28);
-}
-
-.content-box-blue {
-  background-color: #1a1a2e;
-  padding: 2rem;
-  border-radius: 16px;
-  margin-bottom: 2rem;
-
-  box-shadow:
-    0 18px 40px rgba(0,0,0,0.55),      /* глубина */
-    0 0 24px rgba(0,150,255,0.22);     /* цвет как у brand-glow */
-
-  border: 1px solid rgba(0,150,255,0.32);
-  color: #e0f7ff;
-}
-
-  .menu-card.brand-glow {
-  position: relative;
-  overflow: visible;
-  transition: 0.35s ease;
-}
-
-/* Мягкая аура */
-.menu-card.brand-glow::before {
-  content: "";
-  position: absolute;
-  inset: -6px;
-  border-radius: 12px;
-  background: radial-gradient(
-    ellipse at center,
-    rgba(0,180,255,0.35) 0%,
-    rgba(0,120,255,0.25) 30%,
-    rgba(0,80,200,0.15) 50%,
-    transparent 70%
-  );
-  filter: blur(14px);
-  opacity: 0.6;
-  z-index: -1;
-  transition: 0.4s ease;
-}
-
-/* Мягкий внутренний свет */
-.menu-card.brand-glow {
-  border-color: rgba(0,150,255,0.4);
-  box-shadow:
-    0 0 12px rgba(0,150,255,0.4),
-    inset 0 0 8px rgba(0,180,255,0.3);
-  color: #9fdcff;
-}
-
-/* Hover — усиление энергии */
-.menu-card.brand-glow:hover {
-  transform: translateY(-4px);
-  border-color: rgba(0,180,255,0.7);
-  box-shadow:
-    0 0 20px rgba(0,180,255,0.7),
-    0 0 40px rgba(0,120,255,0.4),
-    inset 0 0 12px rgba(0,200,255,0.4);
-}
-
-/* Усиление ауры */
-.menu-card.brand-glow:hover::before {
-  opacity: 1;
-  filter: blur(20px);
-}
-
-  @keyframes neonPulse {
-  0% { box-shadow: 0 0 10px rgba(0,150,255,0.4), inset 0 0 6px rgba(0,180,255,0.2); }
-  50% { box-shadow: 0 0 18px rgba(0,180,255,0.6), inset 0 0 10px rgba(0,200,255,0.3); }
-  100% { box-shadow: 0 0 10px rgba(0,150,255,0.4), inset 0 0 6px rgba(0,180,255,0.2); }
-}
-
-.menu-card.brand-glow {
-  animation: neonPulse 3.5s ease-in-out infinite;
-}
-
-
-
 </style>
 </head>
+
 <body>
 
-<header>
-  <div class="header-text">
-    <h1>MASTERPRIZE</h1>
-    <div class="header-subtitle">
-      Продвижение | Реклама | Интеграция
-    </div>
+<!-- HERO -->
+<section class="hero">
+  <div class="container">
+    <h1>Нативная интеграция брендов в турниры по Го</h1>
+    <p>
+      Доступ к концентрированной аудитории интеллектуального спорта:
+      игроки, зрители, IT- и образовательное сообщество.
+    </p>
+    <a href="mailto:masterprizemail@gmail.com" class="cta">Получить медиакит</a>
   </div>
-</header>
-
-     <div class="top-menu">
-  <a href="index.html" class="menu-card">Главная</a>
-  <a href="tournaments.html" class="menu-card">Турниры</a>
-  <a href="titles.html" class="menu-card">Титулы</a>
-  <a href="money-online.html" class="menu-card">Играть онлайн</a>
-  <a href="partners.html" class="menu-card brand-glow">Бренд-интеграция</a>
-  <a href="contacts.html" class="menu-card">Контакты</a>
-</div>
-
-  <div class="content-box">
-    <h1>Продвижение через нативную рекламу</h1>
-    <p> 
-<section id="brand-integration">
-  <h2>Интегрировать Ваш бренд и продвинуть продукт ? Легко!</h2>
-<div class="content-box-blue">
-  <p>Хотите, чтобы имя вашей компании приобрело дополнительный социально-значимый имидж? 🌍<br>
-  А, может, хотели бы представить один из своих продуктов нативным и эффективным способом? 📈</p>
-
-  <p>Представьте кубок (мероприятие) с вашим брендом 🏆, за который борются десятки или даже сотни интеллектуальных спортсменов ⚪, а информация о нём прямо или косвенно представлена на официальном сайте Федерации Го России, в регламенте, на дипломах победителей, в чатах, на сайте, сообществах и видео-платформах 🎥.</p>
-</div>
-  <div class="content-box-green">
-  <p>Такие события запоминаются надолго ✨, а различные детали продолжают быть предметом обсуждений не один месяц.<br>
-  Это именно то продвижение, которое гармонично и естественно поможет развить ваш бренд или идею, учитывая современный рынок, перенасыщенный агрессивной навязчивой рекламой.</p>
-
-  <p>Только в рамках одного года в турнирах по Го в России участвуют более <strong>7 000 спортсменов</strong> 👥.<br>Каждое такое мероприятие всегда связано с эмоциями 🔥, плотной сеткой обсуждений 💬, публичными мнениями в социальных сетях и личном общении, а также цифровыми и материальными сувенирами 🎁, которые остаются с участниками.</p>
-
-  <p>Турнирами Го заинтересованы не только сами активные игроки, но и представители смежных интеллектуальных направлений (шахматы, квесты, викторины), которые смотрят стримы 📺, следят за исходами турниров и вникают в разбор сыгранных партий 🧠, активно распространяемых на YouTube, Rutube, ВКонтакте и других площадках.</p>
-</div>
-  <div class="content-box-blue">
-  <p>Принимая участие в качестве спонсора турнира, Вы не только эффективно продвигаете свой продукт 🚀, но и вносите вклад в развитие интеллектуального спорта в России 🤝.</p>
-
-  <p>Начать делать сильное маркетинговое продвижение можно уже сегодня.<br>
-  Так почему бы не сделать первый шаг? 😉</p>
-</div>
-  <div class="content-box-green">
-  <p><strong>Связаться с нами:</strong> <a href="mailto:masterprizemail@gmail.com">masterprizemail@gmail.com</a></p>
-    </div>
 </section>
 
-</p>
-    
+<!-- KPI -->
+<section class="container section">
+  <h2>Ключевые показатели</h2>
+  <div class="grid">
+    <div class="card"><div class="kpi">7 000+</div>игроков в год</div>
+    <div class="card"><div class="kpi">XX XXX</div>просмотров стримов</div>
+    <div class="card"><div class="kpi">XX</div>стран участников</div>
+    <div class="card"><div class="kpi">XX XXX</div>соцсети</div>
   </div>
+</section>
+
+<!-- ICP -->
+<section class="container section">
+  <h2>Кому подходит</h2>
+  <div class="grid">
+    <div class="card">EdTech и онлайн-образование</div>
+    <div class="card">IT-сервисы и SaaS</div>
+    <div class="card">Финтех и банки</div>
+    <div class="card">Образовательные проекты</div>
+  </div>
+</section>
+
+<!-- CASE -->
+<section class="container section">
+  <h2>Кейс</h2>
+  <div class="card">
+    <strong>Турнир MASTERPRIZE 1.0</strong><br><br>
+    • Участники: XXX<br>
+    • Онлайн-охват: XXX<br>
+    • Формат: титульный спонсор<br>
+    • Результат: рост узнаваемости бренда в целевой аудитории
+  </div>
+</section>
+
+<!-- PROCESS -->
+<section class="container section">
+  <h2>Как мы работаем</h2>
+  <div class="grid">
+    <div class="card step">Бриф и цели бренда</div>
+    <div class="card step">Подбор формата интеграции</div>
+    <div class="card step">Запуск турнира и размещений</div>
+    <div class="card step">Отчёт по результатам</div>
+  </div>
+</section>
+
+<!-- PACKAGES -->
+<section class="container section">
+  <h2>Пакеты</h2>
+  <div class="grid">
+    <div class="package"><h3>Bronze</h3>Базовое присутствие</div>
+    <div class="package"><h3>Silver</h3>Расширенная интеграция</div>
+    <div class="package"><h3>Gold</h3>Максимальный охват</div>
+    <div class="package"><h3>Title Sponsor</h3>Турнир под брендом</div>
+  </div>
+</section>
+
+<!-- TRUST -->
+<section class="container section">
+  <h2>Нам доверяют</h2>
+  <div class="logos">
+    <div>LOGO</div>
+    <div>LOGO</div>
+    <div>LOGO</div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="container section">
+  <h2>FAQ</h2>
+  <div class="faq-item"><strong>Какие сроки запуска?</strong><br>Обычно 2–6 недель.</div>
+  <div class="faq-item"><strong>Делаете ли отчёт?</strong><br>Да, предоставляем метрики.</div>
+  <div class="faq-item"><strong>Можно кастомный формат?</strong><br>Да, под цели бренда.</div>
+</section>
 
 <footer>
-  <div class="footer-content">
-    <div class="footer-left">© 2026 MASTERPRIZE</div>
-    <div class="footer-center">Призовые турниры по Го</div>
-    <div class="footer-right"><a href="contacts.html">Контакты</a></div>
-  </div>
-
+  © 2026 MASTERPRIZE — Интеллектуальный спорт
 </footer>
-  
+
+<a class="sticky-cta" href="mailto:masterprizemail@gmail.com">
+  Обсудить интеграцию
+</a>
+
 </body>
 </html>
