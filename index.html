@@ -186,19 +186,65 @@ nav:hover .dropdown { display: block; }
 }
 
 /* --- MENU CARDS --- */
-.menu-card {
-  background: #1c1c1c;
-  border: 1px solid #333;
-  padding: 0.8rem 1.6rem;
-  border-radius: 10px;
-  color: #e4e4e4;
-  font-size: 14px;
-  transition: 0.25s ease;
+/* --- Обычная активная кнопка (не Бренд-интеграция) --- */
+.menu-card.active:not(.brand-glow) {
+  position: relative;
+  overflow: hidden;
+  border-radius: 12px;
+  transition: all .28s ease;
 
-  }
-  
-/* hover — только для обычных кнопок */
-.menu-card:not(.brand-glow):hover {
+  /* еле видимая рамка */
+  border-color: rgba(200,169,106,0.08); /* почти прозрачная */
+  color: #e4e4e4; /* цвет текста обычный */
+  background: linear-gradient(
+    180deg,
+    rgba(255,255,255,0.01),
+    rgba(0,0,0,0.05)
+  );
+
+  box-shadow:
+    0 2px 6px rgba(0,0,0,0.3),
+    inset 0 0 0 rgba(255,204,51,0);
+}
+
+/* мягкая аура */
+.menu-card.active:not(.brand-glow)::before {
+  content: "";
+  position: absolute;
+  inset: -8px;
+  border-radius: 14px;
+  background: radial-gradient(
+    ellipse at center,
+    rgba(255,204,51,0.1) 0%,
+    rgba(255,153,0,0.05) 40%,
+    transparent 70%
+  );
+  filter: blur(12px);
+  opacity: 0;
+  transition: opacity .35s ease, filter .35s ease;
+  z-index: -1;
+}
+
+/* micro shine */
+.menu-card.active:not(.brand-glow)::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -120%;
+  width: 60%;
+  height: 100%;
+  background: linear-gradient(
+    120deg,
+    transparent 0%,
+    rgba(255,255,255,0.15) 45%,
+    transparent 100%
+  );
+  transform: skewX(-20deg);
+  transition: left .6s ease;
+}
+
+/* --- hover / усиление энергии --- */
+.menu-card.active:not(.brand-glow):hover {
   transform: translateY(-4px);
 
   border-color: rgba(255,204,51,0.9);
@@ -210,14 +256,15 @@ nav:hover .dropdown { display: block; }
     inset 0 0 10px rgba(255,204,51,0.25);
 }
 
-/* active — тоже без неона */
-.menu-card.active:not(.brand-glow) {
-  border-color: #c8a96a;
-  color: #e7d3a3;
+/* аура на hover */
+.menu-card.active:not(.brand-glow):hover::before {
+  opacity: 1;
+  filter: blur(22px);
+}
 
-  box-shadow:
-    0 0 10px rgba(200,169,106,0.18),
-    inset 0 0 6px rgba(200,169,106,0.12);
+/* micro shine на hover */
+.menu-card.active:not(.brand-glow):hover::after {
+  left: 140%;
 }
 
 /* --- NEWS BANNER --- */
