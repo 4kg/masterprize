@@ -187,13 +187,20 @@ nav:hover .dropdown { display: block; }
 
 /* --- MENU CARDS --- */
 .menu-card {
-  background: #1c1c1c;
-  border: 1px solid #333;
-  padding: 0.8rem 1.6rem;
-  border-radius: 10px;
-  color: #e4e4e4;
-  font-size: 14px;
-  transition: 0.25s ease;
+  content: "";
+  position: absolute;
+  inset: -8px;
+  border-radius: 14px;
+  background: radial-gradient(
+    ellipse at center,
+    rgba(255,204,51,0.18) 0%,
+    rgba(255,153,0,0.10) 40%,
+    transparent 70%
+  );
+  filter: blur(18px);
+  opacity: 0;
+  transition: opacity .35s ease, filter .35s ease;
+  z-index: -1;
 }
   
 /* hover — только для обычных кнопок */
