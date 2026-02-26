@@ -22,6 +22,26 @@ body{
   margin:0 auto;
   padding:3rem 1rem;
 }
+
+  .card, .package{
+  backdrop-filter: blur(6px);
+}
+
+.hero{
+  position:relative;
+}
+
+.hero::after{
+  content:"";
+  position:absolute;
+  inset:0;
+  background:radial-gradient(
+    ellipse at center,
+    transparent 40%,
+    rgba(0,0,0,.35) 100%
+  );
+  pointer-events:none;
+}
 .section{margin-bottom:3.5rem}
 h1,h2,h3{margin-top:0}
 
@@ -146,11 +166,31 @@ footer{
 <section class="hero">
   <div class="container">
     <h1>Нативная интеграция брендов в турниры по Го</h1>
-    <p>
-      Доступ к концентрированной аудитории интеллектуального спорта:
+
+    <p style="color:#ffcc33;font-weight:600">
+  Доступ к концентрированной аудитории интеллектуального спорта
+</p>
+        <p>
       игроки, зрители, IT- и образовательное сообщество.
     </p>
     <a href="mailto:masterprizemail@gmail.com" class="cta">Получить медиакит</a>
+  </div>
+</section>
+
+  <section class="container" style="padding-top:1.5rem">
+  <div style="
+    display:flex;
+    flex-wrap:wrap;
+    gap:2rem;
+    justify-content:center;
+    color:#9aa0a6;
+    font-size:14px;
+    opacity:.9;
+  ">
+    <div>📍 Офлайн-турниры</div>
+    <div>📺 Онлайн-трансляции</div>
+    <div>🌍 Международные участники</div>
+    <div>📊 Подробная отчётность</div>
   </div>
 </section>
 
@@ -184,9 +224,9 @@ footer{
   <h2>Ключевые показатели</h2>
   <div class="grid">
     <div class="card"><div class="kpi">7 000+</div>игроков в год</div>
-    <div class="card"><div class="kpi">XX XXX</div>просмотров стримов</div>
-    <div class="card"><div class="kpi">XX</div>стран участников</div>
-    <div class="card"><div class="kpi">XX XXX</div>соцсети</div>
+    <div class="card"><div class="kpi">9 000+</div>просмотров стримов</div>
+    <div class="card"><div class="kpi">5+</div>стран участников</div>
+    <div class="card"><div class="kpi">99 999+</div>соцсети</div>
   </div>
 </section>
 
@@ -243,7 +283,7 @@ footer{
 
 <!-- CASE -->
 <section class="container section">
-  <h2>Кейс: MASTERPRIZE 1.0</h2>
+  <h2>Кейс: MASTERPRIZE 1.1 online</h2>
 
   <div class="grid">
 
