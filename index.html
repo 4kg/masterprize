@@ -459,11 +459,65 @@ footer {
 }
 
 
+
+  .lang-switcher {
+  display: flex;
+  gap: 8px;
+  margin-top: 10px;
+}
+
+.lang-switcher a {
+  display: inline-block;
+  width: 32px;
+  height: 20px;
+  border-radius: 4px;
+  overflow: hidden;
+  border: 1px solid rgba(255,255,255,0.2);
+  transition: all 0.25s ease;
+}
+
+.lang-switcher a img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.lang-switcher a:hover {
+  transform: scale(1.1);
+  border-color: #ffcc33;
+  box-shadow: 0 0 8px rgba(255,204,51,0.6);
+}
+
+/* Активный язык */
+.lang-switcher a.active {
+  border-color: #ffcc33;
+  box-shadow: 0 0 10px rgba(255,204,51,0.8);
+}
+
+
 </style>
 </head>
 <body>
 
 <header>
+
+  <!-- ===== LANGUAGE SWITCHER ===== -->
+<div class="lang-switcher">
+  <a href="index.html" class="lang-ru" title="Русский">
+    <img src="flags/ru.png" alt="RU">
+  </a>
+  <a href="index-en.html" class="lang-en" title="English">
+    <img src="flags/en.png" alt="EN">
+  </a>
+  <a href="index-zh.html" class="lang-zh" title="中文">
+    <img src="flags/zh.png" alt="ZH">
+  </a>
+  <a href="index-ko.html" class="lang-ko" title="한국어">
+    <img src="flags/ko.png" alt="KO">
+  </a>
+</div>
+  
   <div class="header-text">
     <h1>MASTERPRIZE</h1>
     <div class="header-subtitle">
