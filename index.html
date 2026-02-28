@@ -57,7 +57,8 @@ a:hover { text-decoration: underline; }
 /* --- HEADER --- */
 header {
   position: relative;
-  height: 300px;
+  min-height: 260px;
+  height: clamp(220px, 30vh, 320px);
   background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url("header.jpg") center / cover no-repeat;
   display: flex;
   flex-direction: column;
@@ -198,7 +199,7 @@ nav:hover .dropdown { display: block; }
   border: 1px solid rgba(255,255,255,0.06); /* ← ключ */
   padding: 0.8rem 1.6rem;
   border-radius: 10px;
-  color: #e4e4e4;
+  color: #e6e2d8;
   font-size: 14px;
   transition: all .28s cubic-bezier(0.22, 0.61, 0.36, 1);
   backdrop-filter: blur(2px);
@@ -262,13 +263,6 @@ nav:hover .dropdown { display: block; }
   scroll-behavior: smooth;
   -webkit-overflow-scrolling: touch;
   flex: 1;
-}
-
-.feedback-slider-wrapper {
-  display: flex;
-  align-items: center;
-  overflow: hidden; /* скрываем внешний скролл */
-  margin-bottom: 2rem;
 }
 
 .feedback-slider {
@@ -563,7 +557,6 @@ footer {
 </div>
 
   <div class="container content-box">
-<div class="container">
 
   <div class="feedback-slider-wrapper">
     <button class="scroll-btn left">&#8592;</button>
@@ -575,7 +568,6 @@ footer {
         <img src="win_money_4.jpg" alt="Классные места проведения">
         <img src="win_money_2.jpg" alt="Турнир Го онлайн">
       </div>
-    </div>
     <button class="scroll-btn right">&#8594;</button>
   </div>
   
