@@ -107,6 +107,7 @@
       0 0 20px rgba(255, 153, 0, 0.3);
   }  }
 
+    
 
   .header-subtitle {
     font-size: 15px;
@@ -117,31 +118,6 @@
     letter-spacing: 0.5px;
   }
 
-  nav { position: relative; text-align: left; }
-  .menu-button {
-    cursor: pointer;
-    user-select: none;
-    display: inline-block;
-    padding: 0.5rem 1rem;
-    background: #222;
-    border-radius: 4px;
-    margin-bottom: 0.5rem;
-  }
-
-  .dropdown {
-    display: none;
-    position: absolute;
-    top: 2.5rem;
-    left: 0;
-    background: #1e1e1e;
-    border: 1px solid #333;
-    padding: 0.5rem 1rem;
-    min-width: 220px;
-    border-radius: 4px;
-    z-index: 100;
-  }
-
-  nav:hover .dropdown { display: block; }
 
   .dropdown a {
     display: block;
@@ -221,48 +197,7 @@
     color: #999;
   }
 
-  /* Горизонтальное меню под header */
 
-.top-menu {
-  max-width: 1200px;
-  margin: 2.5rem auto 2rem auto; 
-  padding: 0 1.5rem;
-  display: flex;
-  justify-content: center;
-  gap: 1.2rem;
-  flex-wrap: wrap;
-}
-
-.menu-card {
-  background: #1c1c1c;
-  border: 1px solid #333;
-  padding: 0.8rem 1.6rem;
-  border-radius: 10px;
-  color: #e4e4e4;
-  font-size: 14px;
-  transition: 0.25s ease;
-}
-
-/* hover — только для обычных кнопок */
-.menu-card:not(.brand-glow):hover {
-  transform: translateY(-3px);
-  border-color: #c8a96a;
-  color: #e7d3a3;
-
-  box-shadow:
-    0 6px 18px rgba(0,0,0,0.45),
-    0 0 12px rgba(200,169,106,0.22);
-}
-
-/* active — тоже без неона */
-.menu-card.active:not(.brand-glow) {
-  border-color: #c8a96a;
-  color: #e7d3a3;
-
-  box-shadow:
-    0 0 10px rgba(200,169,106,0.18),
-    inset 0 0 6px rgba(200,169,106,0.12);
-}
 
    /* ===== СТИЛИ ТАБЛИЦЫ ТУРНИРОВ ===== */
   .tournament-table {
@@ -320,12 +255,92 @@
     0 0 22px rgba(200,169,106,0.22);   /* мягкое золото */
 }
 
-/* ===== BRAND BUTTON — ELITE LUXURY ===== */
+    
+
+
+  /*  -----------     MENU   ---------- */
+
+
+
+
+  
+.top-menu {
+  max-width: 1200px;
+  margin: 2.5rem auto;
+  padding: 0 1rem;
+  display: flex;
+  justify-content: center;
+  gap: 1.2rem;
+  flex-wrap: wrap;
+  box-sizing: border-box;
+}
+
+.menu-card {
+  position: relative;
+  overflow: hidden;
+  background: #1c1c1c;
+  border: 1px solid rgba(255,255,255,0.06); /* ← ключ */
+  padding: 0.8rem 1.6rem;
+  border-radius: 10px;
+  color: #e6e2d8;
+  font-size: 14px;
+  transition: all .28s cubic-bezier(0.22, 0.61, 0.36, 1);
+  backdrop-filter: blur(2px);
+  letter-spacing: 0.02em;
+
+  box-shadow:
+    0 2px 8px rgba(0,0,0,0.35);
+}
+
+  .menu-card::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image:
+    radial-gradient(rgba(255,255,255,0.03) 1px, transparent 1px);
+  background-size: 3px 3px;
+  opacity: 0.15;
+  pointer-events: none;
+}
+  
+/* hover — только для обычных кнопок */
+.menu-card:not(.brand-glow):hover {
+  transform: translateY(-3px);
+
+  border-color: rgba(200,169,106,0.45);
+  color: #e7d3a3;
+
+  box-shadow:
+    0 6px 18px rgba(0,0,0,0.5),
+    0 0 10px rgba(200,169,106,0.16);
+}
+
+/* active — тоже без неона */
+.menu-card.active:not(.brand-glow) {
+  transform: translateY(-2px);
+
+  border-color: rgba(255,204,51,0.55);
+  color: #f1e2b8;
+
+  background: linear-gradient(
+    180deg,
+    rgba(255,255,255,0.03),
+    rgba(0,0,0,0.18)
+  );
+
+  box-shadow:
+    0 8px 22px rgba(0,0,0,0.55),
+    0 0 14px rgba(200,169,106,0.18),
+    inset 0 0 6px rgba(255,204,51,0.10);
+}
+
+    /* brand glow*/
 
 .menu-card.brand-glow {
   position: relative;
   overflow: hidden;
   transition: all .28s ease;
+  transform: translateY(-3px) scale(1.01);
 
   /* спокойный idle */
   border-color: rgba(200,169,106,0.45);
@@ -377,8 +392,6 @@
   transition: left .6s ease;
 }
 
-/* ===== HOVER — ДОРОГАЯ АКТИВАЦИЯ ===== */
-
 .menu-card.brand-glow:hover {
   transform: translateY(-4px);
 
@@ -401,6 +414,52 @@
 .menu-card.brand-glow:hover::after {
   left: 140%;
 }
+
+
+    /* ------------ LANGUAGES --------------------*/
+
+
+
+    .lang-switcher {
+  display: flex;
+  gap: 8px;
+  margin-top: 10px;
+}
+
+.lang-switcher a {
+  display: inline-block;
+  width: 32px;
+  height: 20px;
+  border-radius: 4px;
+  overflow: hidden;
+  border: 1px solid rgba(255,255,255,0.2);
+  transition: all 0.25s ease;
+}
+
+.lang-switcher a img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.lang-switcher a:hover {
+  transform: scale(1.1);
+  border-color: #ffcc33;
+  box-shadow: 0 0 8px rgba(255,204,51,0.6);
+}
+
+/* Активный язык */
+.lang-switcher a.active {
+  border-color: #ffcc33;
+  box-shadow: 0 0 10px rgba(255,204,51,0.8);
+}
+
+
+
+
+
+
 
 
 </style>
