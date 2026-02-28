@@ -187,42 +187,48 @@ nav:hover .dropdown { display: block; }
 
 .menu-card {
   background: #1c1c1c;
-  border: 1px solid #333;
+  border: 1px solid rgba(255,255,255,0.06); /* ← ключ */
   padding: 0.8rem 1.6rem;
   border-radius: 10px;
   color: #e4e4e4;
   font-size: 14px;
-  transition: 0.25s ease;
+  transition: all .28s ease;
+  backdrop-filter: blur(2px);
 
-  }
+  box-shadow:
+    0 2px 8px rgba(0,0,0,0.35);
+}
   
 /* hover — только для обычных кнопок */
 .menu-card:not(.brand-glow):hover {
   transform: translateY(-3px);
-  border-color: #c8a96a;
+
+  border-color: rgba(200,169,106,0.45);
   color: #e7d3a3;
 
   box-shadow:
-    0 6px 18px rgba(0,0,0,0.45),
-    0 0 12px rgba(200,169,106,0.22);
+    0 6px 18px rgba(0,0,0,0.5),
+    0 0 10px rgba(200,169,106,0.16);
 }
 
 /* active — тоже без неона */
 .menu-card.active:not(.brand-glow) {
-  border-color: #c8a96a;
-  color: #e7d3a3;
+  transform: translateY(-2px);
+
+  border-color: rgba(255,204,51,0.55);
+  color: #f1e2b8;
+
+  background: linear-gradient(
+    180deg,
+    rgba(255,255,255,0.03),
+    rgba(0,0,0,0.18)
+  );
 
   box-shadow:
-    0 0 10px rgba(200,169,106,0.18),
-    inset 0 0 6px rgba(200,169,106,0.12);
+    0 8px 22px rgba(0,0,0,0.55),
+    0 0 14px rgba(200,169,106,0.18),
+    inset 0 0 6px rgba(255,204,51,0.10);
 }
-/* --- NEWS BANNER --- */
-.news-banner {
-  margin-bottom: 2rem;
-  font-size: 14px;
-  text-align: center;
-}
-
 /* --- FEEDBACK SLIDER --- */
 .feedback-slider-wrapper {
   display: flex;
