@@ -778,6 +778,13 @@ header {
   }
 }
 
+        /* ===== обернуть в скролл ===== */
+    
+.table-scroll {
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
     /* ===== MOBILE BOTTOM NAV VISIBILITY ===== */
     
 @media (max-width: 1024px) {
@@ -842,7 +849,8 @@ header {
  <div class="container content-box">
 
     <p>Tournament schedule (links to regulations and registration are clickable)</p>
-
+     
+<div class="table-scroll">
 <table class="tournament-table">
   <thead>
     <tr>
@@ -886,6 +894,7 @@ header {
   </tbody>
 </table>
   </div>
+   </div>
 
 <footer class="site-footer">
 
