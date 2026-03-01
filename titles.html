@@ -356,8 +356,7 @@ animation: goldFlow 6s linear infinite, goldPulse 4s ease-in-out infinite;
   /* GRID */
 .titles-grid {
   display: grid;
-  grid-template-columns: repeat(3, 260px); /* фиксированная ширина карточки */
-  justify-content: center; /* центрируем сетку */
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
   gap: 1.5rem;
 }
 
@@ -687,11 +686,6 @@ animation: goldFlow 6s linear infinite, goldPulse 4s ease-in-out infinite;
   color: #e7d3a3;
 }
 
-/* показываем только на мобиле */
-@media (max-width: 900px) {
-  .mobile-bottom-nav {
-    display: flex;
-  }
 
   body {
     padding-bottom: 74px; /* чтобы контент не перекрывался */
@@ -742,7 +736,15 @@ animation: goldFlow 6s linear infinite, goldPulse 4s ease-in-out infinite;
   flex: 0 0 auto;
 }
 
-
+.lang-switcher {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  display: flex;
+  gap: 8px;
+  margin-top: 0;
+  z-index: 5;
+}
 
 
 
