@@ -355,8 +355,7 @@ animation: goldFlow 6s linear infinite, goldPulse 4s ease-in-out infinite;
   /* GRID */
 .titles-grid {
   display: grid;
-  grid-template-columns: repeat(3, 260px); /* фиксированная ширина карточки */
-  justify-content: center; /* центрируем сетку */
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
   gap: 1.5rem;
 }
 
