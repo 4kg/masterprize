@@ -24,7 +24,7 @@
 <link rel="icon" href="/favicon.ico" type="image/x-icon">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <script type="text/javascript" src="https://vk.com/js/api/openapi.js?168"></script>
-<script type="text/javascript" src="https://vk.com/js/api/share.js?93" charset="windows-1251"></script>
+<script src="https://vk.com/js/api/share.js?93"></script>
 
 <!-- Open Graph для VK/соцсетей -->
 <meta property="og:title" content="В Новосибирске 7 и 8 февраля 2026 г прошёл турнир MASTERPRIZE 1.0">
@@ -672,7 +672,9 @@ footer {
 
 /*--------------------     ФИЧА ДЛЯ МОБИЛЫ       ----------------*/
 
-
+.feedback-slider {
+  touch-action: pan-x;
+}
 
 @media (max-width: 700px) {
   .article-box img {
@@ -908,12 +910,9 @@ footer {
     color2: "3a3a3a",
     color3: "b39904"
   }, 233037929);
-
-  
 </script>
 
   
-</div>
 
 
 <footer class="site-footer">
@@ -961,13 +960,15 @@ const slider = document.querySelector('.feedback-slider');
 const btnLeft = document.querySelector('.scroll-btn.left');
 const btnRight = document.querySelector('.scroll-btn.right');
 
+const scrollAmount = () => slider.clientWidth * 0.9;
+
 btnLeft.addEventListener('click', () => {
-  slider.scrollBy({ left: -800, behavior: 'smooth' });
-});
-btnRight.addEventListener('click', () => {
-  slider.scrollBy({ left: 800, behavior: 'smooth' });
+  slider.scrollBy({ left: -scrollAmount(), behavior: 'smooth' });
 });
 
+btnRight.addEventListener('click', () => {
+  slider.scrollBy({ left: scrollAmount(), behavior: 'smooth' });
+});
 </script>
 
 
