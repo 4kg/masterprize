@@ -1,0 +1,898 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+
+  
+<!-- Yandex.Metrika counter -->
+<script type="text/javascript">
+    (function(m,e,t,r,i,k,a){
+        m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
+        m[i].l=1*new Date();
+        for (var j = 0; j < document.scripts.length; j++) {if (document.scripts[j].src === r) { return; }}
+        k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)
+    })(window, document,'script','https://mc.yandex.ru/metrika/tag.js?id=106316027', 'ym');
+
+    ym(106316027, 'init', {ssr:true, webvisor:true, clickmap:true, ecommerce:"dataLayer", referrer: document.referrer, url: location.href, accurateTrackBounce:true, trackLinks:true});
+</script>
+<noscript><div><img src="https://mc.yandex.ru/watch/106316027" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+<!-- /Yandex.Metrika counter -->
+
+
+
+<meta charset="UTF-8">
+<title>MASTERPRIZE | Baduk | Go tournaments</title>
+<link rel="icon" href="/favicon.ico" type="image/x-icon">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<script type="text/javascript" src="https://vk.com/js/api/openapi.js?168"></script>
+<script src="https://vk.com/js/api/share.js?93"></script>
+
+<!-- Open Graph для VK/соцсетей -->
+<meta property="og:title" content="В Новосибирске 7 и 8 февраля 2026 г прошёл турнир MASTERPRIZE 1.0">
+<meta property="og:description" content="Хотелось бы выразить благодарность участникам турнира, которые приехали из пяти регионов России, а также главному победителю турнира - гостю из Китая Ван Сюю.">
+<meta property="og:image" content="https://raw.githubusercontent.com/4kg/masterprize/refs/heads/main/masterprize1.jpg">
+<meta property="og:url" content="https://masterprize.ru/tournament.html">
+
+<style>
+
+/* --- BODY & RESET --- */
+body {
+  font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
+  font-size: 16px;
+  color: #e6e2d8;
+  margin: 0;
+  line-height: 1.5;
+  overflow-x: hidden; /* запрещаем горизонтальный скролл */
+  background:         /* добавлю воздуха */
+    radial-gradient(
+      circle at 20% 10%,
+      rgba(255,255,255,0.04),
+      transparent 40%
+    ),
+    #111;
+}
+
+a { color: #8fbcd4; text-decoration: none; }
+a:hover { text-decoration: underline; }
+
+/* --- HEADER --- */
+header {
+  position: relative;
+  min-height: 260px;
+  height: clamp(220px, 30vh, 320px);
+  background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url("header.jpg") center / cover no-repeat;
+  display: flex;
+  flex-direction: column;
+  padding: 1rem;
+}
+
+  header::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(
+    ellipse at center,
+    transparent 40%,
+    rgba(0,0,0,0.35) 100%
+  );
+  pointer-events: none;
+}
+
+.header-text {
+  margin-top: auto;
+  width: 100%;
+  text-align: left;
+}
+
+.header-text h1 {
+  margin: 0;
+  font-weight: 700;
+  letter-spacing: 2px;
+  animation: goldFlow 8s linear infinite, goldPulse 6s ease-in-out infinite;
+  background: linear-gradient(
+    90deg,
+    #fff6c2 0%,
+    #ffcc33 25%,
+    #ff9900 50%,
+    #ffcc33 75%,
+    #fff6c2 100%
+  );
+
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+
+  text-shadow:
+    0 0 10px rgba(255, 204, 51, 0.6),
+    0 0 25px rgba(255, 153, 0, 0.4);
+}
+@keyframes goldFlow {
+  0% {
+    background-position: 0% center;
+  }
+  100% {
+    background-position: 200% center;
+  }
+}
+
+  @keyframes goldPulse {
+  0% {
+    text-shadow:
+      0 0 8px rgba(255, 204, 51, 0.5),
+      0 0 20px rgba(255, 153, 0, 0.3);
+  }
+  50% {
+    text-shadow:
+      0 0 18px rgba(255, 204, 51, 0.8),
+      0 0 35px rgba(255, 153, 0, 0.5);
+  }
+  100% {
+    text-shadow:
+      0 0 8px rgba(255, 204, 51, 0.5),
+      0 0 20px rgba(255, 153, 0, 0.3);
+  }  }
+
+
+
+.header-subtitle {
+  font-size: 15px;
+  margin-top: 6px;
+  padding: 6px 0 8px;
+  border-top: 1px solid rgba(255,255,255,0.15);
+  color: #b5b5b5;
+  letter-spacing: 0.5px;
+}
+
+
+/* --- CONTAINER --- */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2.5rem 1rem; /* меньше боковых паддингов */
+  box-sizing: border-box;
+}
+
+
+
+
+  /*  -----------     MENU   ---------- */
+
+
+
+
+  
+.top-menu {
+  max-width: 1200px;
+  margin: 2.5rem auto;
+  padding: 0 1rem;
+  display: flex;
+  justify-content: center;
+  gap: 1.2rem;
+  flex-wrap: wrap;
+  box-sizing: border-box;
+}
+
+.menu-card {
+  position: relative;
+  overflow: hidden;
+  background: #1c1c1c;
+  border: 1px solid rgba(255,255,255,0.06); /* ← ключ */
+  padding: 0.8rem 1.6rem;
+  border-radius: 10px;
+  color: #e6e2d8;
+  font-size: 14px;
+  transition: all .28s cubic-bezier(0.22, 0.61, 0.36, 1);
+  backdrop-filter: blur(2px);
+  letter-spacing: 0.02em;
+
+  box-shadow:
+    0 2px 8px rgba(0,0,0,0.35);
+}
+
+  .menu-card::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image:
+    radial-gradient(rgba(255,255,255,0.03) 1px, transparent 1px);
+  background-size: 3px 3px;
+  opacity: 0.15;
+  pointer-events: none;
+}
+  
+/* hover — только для обычных кнопок */
+.menu-card:not(.brand-glow):hover {
+  transform: translateY(-3px);
+
+  border-color: rgba(200,169,106,0.45);
+  color: #e7d3a3;
+
+  box-shadow:
+    0 6px 18px rgba(0,0,0,0.5),
+    0 0 10px rgba(200,169,106,0.16);
+}
+
+/* active — тоже без неона */
+.menu-card.active:not(.brand-glow) {
+  transform: translateY(-2px);
+
+  border-color: rgba(255,204,51,0.55);
+  color: #f1e2b8;
+
+  background: linear-gradient(
+    180deg,
+    rgba(255,255,255,0.03),
+    rgba(0,0,0,0.18)
+  );
+
+  box-shadow:
+    0 8px 22px rgba(0,0,0,0.55),
+    0 0 14px rgba(200,169,106,0.18),
+    inset 0 0 6px rgba(255,204,51,0.10);
+}
+
+    /* brand glow*/
+
+.menu-card.brand-glow {
+  position: relative;
+  overflow: hidden;
+  transition: all .28s ease;
+  transform: translateY(-3px) scale(1.01);
+
+  /* спокойный idle */
+  border-color: rgba(200,169,106,0.45);
+  color: #e9d7a8;
+  background: linear-gradient(
+    180deg,
+    rgba(255,255,255,0.02),
+    rgba(0,0,0,0.15)
+  );
+
+  box-shadow:
+    0 4px 14px rgba(0,0,0,0.45),
+    inset 0 0 0 rgba(255,204,51,0);
+}
+
+/* мягкая аура (почти невидима) */
+.menu-card.brand-glow::before {
+  content: "";
+  position: absolute;
+  inset: -8px;
+  border-radius: 14px;
+  background: radial-gradient(
+    ellipse at center,
+    rgba(255,204,51,0.18) 0%,
+    rgba(255,153,0,0.10) 40%,
+    transparent 70%
+  );
+  filter: blur(18px);
+  opacity: 0;
+  transition: opacity .35s ease, filter .35s ease;
+  z-index: -1;
+}
+
+/* ✨ micro shine */
+.menu-card.brand-glow::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -120%;
+  width: 60%;
+  height: 100%;
+  background: linear-gradient(
+    120deg,
+    transparent 0%,
+    rgba(255,255,255,0.25) 45%,
+    transparent 100%
+  );
+  transform: skewX(-20deg);
+  transition: left .6s ease;
+}
+
+.menu-card.brand-glow:hover {
+  transform: translateY(-4px);
+
+  border-color: rgba(255,204,51,0.9);
+  color: #fff3c4;
+
+  box-shadow:
+    0 10px 28px rgba(0,0,0,0.6),
+    0 0 18px rgba(255,204,51,0.35),
+    inset 0 0 10px rgba(255,204,51,0.25);
+}
+
+/* усиливаем ауру */
+.menu-card.brand-glow:hover::before {
+  opacity: 1;
+  filter: blur(22px);
+}
+
+/* запускаем блик */
+.menu-card.brand-glow:hover::after {
+  left: 140%;
+}
+
+
+    /* ------------ LANGUAGES --------------------*/
+
+
+
+    .lang-switcher {
+  display: flex;
+  gap: 8px;
+  margin-top: 10px;
+}
+
+.lang-switcher a {
+  display: inline-block;
+  width: 32px;
+  height: 20px;
+  border-radius: 4px;
+  overflow: hidden;
+  border: 1px solid rgba(255,255,255,0.2);
+  transition: all 0.25s ease;
+}
+
+.lang-switcher a img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.lang-switcher a:hover {
+  transform: scale(1.1);
+  border-color: #ffcc33;
+  box-shadow: 0 0 8px rgba(255,204,51,0.6);
+}
+
+/* Активный язык */
+.lang-switcher a.active {
+  border-color: #ffcc33;
+  box-shadow: 0 0 10px rgba(255,204,51,0.8);
+}
+
+
+
+
+
+
+
+/* --- FEEDBACK SLIDER --- */
+
+
+
+
+  
+.feedback-slider-wrapper {
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+  margin-bottom: 2rem;
+}
+
+.feedback-slider {
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  -webkit-overflow-scrolling: touch;
+  flex: 1;
+}
+
+.feedback-slider {
+  overflow-x: auto;              /* горизонтальный скролл */
+  scroll-behavior: smooth;
+  -webkit-overflow-scrolling: touch;
+
+  scrollbar-width: none;         /* Firefox */
+}
+
+.feedback-slider::-webkit-scrollbar {
+  display: none;                 /* Chrome, Safari, Opera */
+}
+
+.feedback-track {
+  display: flex;
+  gap: 1rem;
+}
+
+.feedback-track img {
+  height: 150px;
+  border-radius: 6px;
+  object-fit: cover;
+}
+
+/* --- SCROLL BUTTONS --- */
+.scroll-btn {
+  background: #222;
+  border: 1px solid #333;
+  color: #ffd804;
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+  border-radius: 6px;
+  margin: 0 0.5rem;
+  flex-shrink: 0;
+}
+
+/* --- ARTICLE --- */
+.article-box img {
+  float: left;           /* обтекание текста */
+  width: 50%;            /* занимает половину контейнера */
+  max-width: 50%;
+  margin-right: 1rem;    /* отступ от текста */
+  margin-bottom: 1rem;
+  border-radius: 6px;
+}
+  .article-box .article-text {
+  flex: 1; /* текст занимает оставшееся место */
+  min-width: 250px; /* минимальная ширина на мобильных */
+}
+
+  .article-box h2 {
+  margin-top: 0;
+  color: #ffcc33;
+}
+
+.article-box p {
+  margin-bottom: 1rem;
+  color: #e4e4e4;
+}
+
+/* --- GRID --- */
+.titles-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  justify-content: center;
+  gap: 1.5rem;
+}
+
+/* --- CARDS --- */
+.title-card {
+  background: #1c1c1c;
+  border: 1px solid #333;
+  border-radius: 8px;
+  padding: 0.8rem;
+  text-align: center;
+  transition: 0.3s ease;
+}
+.title-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 0 25px rgba(255, 204, 51, 0.5);
+}
+.title-card img {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+  border-radius: 6px;
+  margin-bottom: 0.8rem;
+}
+.tournament-name {
+  font-size: 13px;
+  color: #999;
+  margin-bottom: 0.2rem;
+}
+.title-name {
+  font-size: 16px;
+  font-weight: bold;
+  color: #ffcc33;
+}
+
+/* --- FOOTER --- */
+footer {
+  margin-top: 5rem;
+  padding: 3rem 1rem;
+  background: #0f0f0f;
+  border-top: 1px solid #2f2f2f;
+}
+.footer-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 14px;
+  color: #999;
+  flex-wrap: wrap;
+}
+.footer-content > div {
+  margin: 0.5rem 0;
+}
+
+  .content-box {
+  max-width: 1200px;
+  margin: 0 auto 2rem;
+  background-color: #1f1f1f; /* чуть светлее, чем фон сайта */
+  padding: 2rem;
+  border-radius: 16px;
+  margin-bottom: 2rem;
+  box-shadow:
+    0 18px 40px rgba(0,0,0,0.55),      /* глубина */
+    0 0 22px rgba(200,169,106,0.22);   /* мягкое золото */
+}
+
+
+
+
+
+/* ------------------------ FOOTER --------------------*/
+
+
+.site-footer {
+  position: relative;
+  margin-top: 7rem;
+  background:
+    radial-gradient(circle at 20% -20%, rgba(255,204,51,0.06), transparent 40%),
+    radial-gradient(circle at 80% 120%, rgba(200,169,106,0.05), transparent 45%),
+    #0a0a0a;
+  border-top: 1px solid rgba(255,255,255,0.06);
+  overflow: hidden;
+}
+
+/* subtle noise texture */
+.site-footer::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image:
+    radial-gradient(rgba(255,255,255,0.03) 1px, transparent 1px);
+  background-size: 3px 3px;
+  opacity: 0.12;
+  pointer-events: none;
+}
+
+/* glowing energy line */
+.footer-glow {
+  position: absolute;
+  top: 0;
+  left: -20%;
+  width: 140%;
+  height: 1px;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255,204,51,0.9),
+    rgba(255,153,0,0.9),
+    transparent
+  );
+  filter: blur(0.6px);
+  opacity: 0.9;
+}
+
+/* main layout */
+
+.footer-inner {
+  position: relative;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 3.4rem 1rem 2.6rem;
+  display: grid;
+  grid-template-columns: 1.2fr 1fr auto;
+  gap: 3rem;
+  align-items: start;
+}
+
+/* ================= BRAND ================= */
+
+.footer-logo {
+  font-weight: 800;
+  letter-spacing: 0.16em;
+  font-size: 20px;
+  color: #ffcc33;
+  text-shadow:
+    0 0 12px rgba(255,204,51,0.25);
+}
+
+.footer-tag {
+  margin-top: 8px;
+  font-size: 13px;
+  color: #9a9a9a;
+}
+
+.footer-trust {
+  margin-top: 14px;
+  font-size: 12px;
+  color: #6f6f6f;
+  line-height: 1.6;
+}
+
+/* ================= LINKS ================= */
+
+.footer-links {
+  display: grid;
+  grid-template-columns: repeat(2, auto);
+  gap: 10px 28px;
+}
+
+.footer-links a {
+  color: #8e8e8e;
+  font-size: 14px;
+  transition: all .25s ease;
+  position: relative;
+}
+
+/* hover underline glow */
+
+.footer-links a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -4px;
+  width: 0%;
+  height: 1px;
+  background: linear-gradient(
+    90deg,
+    #ffcc33,
+    #ff9900
+  );
+  transition: width .25s ease;
+  opacity: .9;
+}
+
+.footer-links a:hover {
+  color: #ffcc33;
+}
+
+.footer-links a:hover::after {
+  width: 100%;
+}
+
+/* ================= META ================= */
+
+.footer-meta {
+  text-align: right;
+}
+
+.footer-copy {
+  font-size: 13px;
+  color: #6f6f6f;
+}
+
+.footer-made {
+  margin-top: 6px;
+  font-size: 12px;
+  color: #4f4f4f;
+}
+
+/* ================= MOBILE ================= */
+
+@media (max-width: 900px) {
+  .footer-inner {
+    grid-template-columns: 1fr;
+    text-align: center;
+    gap: 2rem;
+  }
+
+  .footer-meta {
+    text-align: center;
+  }
+
+  .footer-links {
+    justify-content: center;
+    grid-template-columns: repeat(2, auto);
+  }
+}
+
+/*--------------------     ФИЧА ДЛЯ МОБИЛЫ       ----------------*/
+
+.feedback-slider {
+  touch-action: pan-x;
+}
+
+@media (max-width: 700px) {
+  .article-box img {
+    float: none;
+    width: 100%;
+    max-width: 100%;
+    margin-right: 0;
+  }
+}
+
+  @media (max-width: 640px) {
+  .menu-card {
+    padding: 0.9rem 1.4rem;
+    font-size: 15px;
+  }
+}
+
+  @media (max-width: 640px) {
+  .lang-switcher a {
+    width: 40px;
+    height: 26px;
+  }
+}
+
+  @media (max-width: 640px) {
+  body {
+    font-size: 17px;
+    line-height: 1.6;
+  }
+}
+
+
+/* ===== MOBILE BOTTOM NAV ===== */
+
+.mobile-bottom-nav {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 64px;
+
+  display: none;
+  justify-content: space-around;
+  align-items: center;
+
+  background: rgba(10,10,10,0.9);
+  backdrop-filter: blur(12px);
+
+  border-top: 1px solid rgba(255,255,255,0.08);
+  z-index: 9999;
+
+  padding-bottom: env(safe-area-inset-bottom);
+}
+
+.mb-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  font-size: 11px;
+  color: #9a9a9a;
+  text-decoration: none;
+
+  min-width: 60px;
+}
+
+.mb-item span {
+  margin-top: 2px;
+}
+
+.mb-item.active {
+  color: #ffcc33;
+}
+
+.mb-item.accent {
+  color: #e7d3a3;
+}
+
+/* показываем только на мобиле */
+@media (max-width: 900px) {
+  .mobile-bottom-nav {
+    display: flex;
+  }
+
+  body {
+    padding-bottom: 74px; /* чтобы контент не перекрывался */
+  }
+}
+
+  .tap-feedback {
+  -webkit-tap-highlight-color: rgba(255,204,51,0.25);
+}
+
+  .menu-card,
+.mb-item,
+.lang-switcher a,
+.scroll-btn {
+  -webkit-tap-highlight-color: rgba(255,204,51,0.25);
+}
+
+  .feedback-track {
+  display: flex;
+  gap: 1rem;
+  will-change: transform;
+}
+
+  @media (max-width: 640px) {
+  h1 {
+    font-size: clamp(26px, 6vw, 34px);
+    letter-spacing: 1px;
+  }
+
+  h2 {
+    font-size: 22px;
+  }
+
+  .header-subtitle {
+    font-size: 14px;
+  }
+}
+  
+
+  /* ---- СЛАЙДЕР -----*/
+  
+.feedback-slider {
+  scroll-snap-type: x mandatory;
+}
+
+.feedback-track img {
+  scroll-snap-align: start;
+  flex: 0 0 auto;
+}
+
+
+
+
+
+
+
+
+</style>
+</head>
+<body>
+
+<header>
+   <div class="header-text">
+    <h1>MASTERPRIZE</h1>
+    <div class="header-subtitle">
+To be completed...
+    </div>
+  </div>
+</header>
+
+    <div class="top-menu">
+  <a href="index.html" class="menu-card active">Main</a>
+
+</div>
+
+  <div class="container content-box">
+    <div class="share-block">
+      <script type="text/javascript">
+        document.write(VK.Share.button(false, {type: "round_nocount", text: "Поделиться"}));
+      </script>
+    </div>
+
+    <h2>In process ... </h2>
+      <img src="https://raw.githubusercontent.com/4kg/masterprize/refs/heads/main/plug.jpeg" alt="MASTERPRIZE go baduk">
+
+        </div>
+       </div>
+  
+
+
+<footer class="site-footer">
+
+  <!-- glow line -->
+  <div class="footer-glow"></div>
+
+  <div class="footer-inner">
+
+    <!-- LEFT: BRAND -->
+    <div class="footer-brand">
+      <div class="footer-logo">MASTERPRIZE</div>
+      <div class="footer-tag">
+        Призовые турниры по Го
+      </div>
+
+      <div class="footer-trust">
+        Офлайн и онлайн турниры • Международные участники
+      </div>
+    </div>
+
+    <!-- CENTER: NAV -->
+    <nav class="footer-links">
+      <a href="tournaments.html">Турниры</a>
+      <a href="titles.html">Титулы</a>
+      <a href="partners.html">Бренд-интеграция</a>
+      <a href="money-online.html">Играть онлайн</a>
+      <a href="contacts.html">Контакты</a>
+    </nav>
+
+    <!-- RIGHT: META -->
+    <div class="footer-meta">
+      <div class="footer-copy">© 2026 MASTERPRIZE</div>
+      <div class="footer-made">
+        Intellectual sport platform
+      </div>
+    </div>
+
+  </div>
+
+</footer>
+
+
+
+
+
+  
+</body>
+</html>
