@@ -1131,6 +1131,25 @@ footer {
   <a href="partners.html" class="mb-item accent">🤝<span>Collab</span></a>
   <a href="contacts.html" class="mb-item">✉️<span>Contacts</span></a>
 </nav>
+
+<script>
+const donateBtn = document.querySelector('.donate-btn');
+
+let lastScroll = 0;
+
+window.addEventListener('scroll', () => {
+  const y = window.scrollY;
+
+  // включаем sticky после header
+  if (y > 220) {
+    donateBtn.classList.add('is-sticky');
+  } else {
+    donateBtn.classList.remove('is-sticky');
+  }
+
+  lastScroll = y;
+});
+</script>
     
 </body>
 </html>
