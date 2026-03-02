@@ -742,12 +742,13 @@ animation: goldFlow 6s linear infinite, goldPulse 4s ease-in-out infinite;
 }
 
 
-    /* -------------- DONATE ----------------------- */
+
+/* -------------- DONATE ----------------------- */
 
 .header-top {
   display: flex;
   justify-content: space-between;
-  align-items: flex-start;
+  align-items: center; /* ← ключевой фикс */
   gap: 12px;
 }
 
@@ -755,22 +756,32 @@ animation: goldFlow 6s linear infinite, goldPulse 4s ease-in-out infinite;
 .donate-btn {
   position: relative;
   isolation: isolate;
-  align-self: flex-start;
-  margin-top: 2px;
 
-  padding: 9px 16px;
-  font-size: 13px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  height: 22px;            /* ← ключ */
+  padding: 0 12px;         /* убрали вертикальные паддинги */
+  font-size: 12px;
   font-weight: 700;
-  letter-spacing: .06em;
+  letter-spacing: .05em;
+  line-height: 1;
 
   color: #2a2100;
   text-decoration: none;
 
-  background: linear-gradient(
-    180deg,
-    #ffe27a,
-    #ffcc33
-  );
+  background: linear-gradient(180deg, #ffe27a, #ffcc33);
+  border-radius: 6px;
+  border: 1px solid rgba(255,204,51,0.85);
+
+  box-shadow:
+    0 4px 12px rgba(0,0,0,0.45),
+    0 0 10px rgba(255,204,51,0.22);
+
+  transition: all .25s ease;
+  overflow: hidden;
+}
 
   border-radius: 10px;
   border: 1px solid rgba(255,204,51,0.85);
@@ -855,9 +866,11 @@ animation: goldFlow 6s linear infinite, goldPulse 4s ease-in-out infinite;
 /* --- mobile --- */
 @media (max-width: 640px) {
   .donate-btn {
-    padding: 8px 13px;
+    height: 28px;
     font-size: 12px;
+    padding: 0 14px;
   }
+}
 
   .donate-btn.is-sticky {
     top: auto;
