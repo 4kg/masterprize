@@ -49,7 +49,7 @@ header {
   position: relative;
   min-height: 260px;
   height: clamp(220px, 30vh, 320px);
-  background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url("https://raw.githubusercontent.com/4kg/masterprize/refs/heads/main/header.jpg") center / cover no-repeat;
+  background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url("header.jpg") center / cover no-repeat;
   display: flex;
   flex-direction: column;
   padding: 1rem;
@@ -623,9 +623,9 @@ header {
     justify-content: center;
     grid-template-columns: repeat(2, auto);
   }
+}
 
-
-    /*------------ МОБИЛА ----------------------*/
+/* ================= MOBILE ================= */
 
 @media (max-width: 900px) {
   .footer-inner {
@@ -634,19 +634,6 @@ header {
     gap: 2rem;
   }
 
-  .footer-meta {
-    text-align: center;
-  }
-
-  .footer-links {
-    justify-content: center;
-    grid-template-columns: repeat(2, auto);
-  }
-    
-
-/*------------  ЕЩЁ МОБИЛА ----------------------*/
-
-    
   .footer-meta {
     text-align: center;
   }
@@ -741,10 +728,16 @@ header {
   color: #e7d3a3;
 }
 
+/* показываем только на мобиле */
+@media (max-width: 900px) {
+  .mobile-bottom-nav {
+    display: flex;
+  }
 
   body {
     padding-bottom: 74px; /* чтобы контент не перекрывался */
   }
+}
 
   .tap-feedback {
   -webkit-tap-highlight-color: rgba(255,204,51,0.25);
@@ -777,24 +770,25 @@ header {
     font-size: 14px;
   }
 }
+  
 
-        /* ===== обернуть в скролл ===== */
-    
+  /* ---- СЛАЙДЕР -----*/
+  
+.feedback-slider {
+  scroll-snap-type: x mandatory;
+}
+
+.feedback-track img {
+  scroll-snap-align: start;
+  flex: 0 0 auto;
+}
+
+/* -------- табле скролле ------------ */
+
 .table-scroll {
   overflow-x: auto;
   -webkit-overflow-scrolling: touch;
 }
-
-    /* ===== MOBILE BOTTOM NAV VISIBILITY ===== */
-    
-@media (max-width: 1024px) {
-  .mobile-bottom-nav {
-    display: flex;
-  }
-
-  body {
-    padding-bottom: 74px;
-  }
 
 
 /* -------------- DONATE ----------------------- */
@@ -932,6 +926,7 @@ header {
     right: 12px;
   }
 }
+
 
 
 </style>
