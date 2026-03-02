@@ -27,9 +27,9 @@
 <script type="text/javascript" src="https://vk.com/js/api/share.js?93" charset="windows-1251"></script>
 
 
-
 <style>
 
+/* --- BODY & RESET --- */
 body {
   font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
   font-size: 16px;
@@ -54,7 +54,7 @@ header {
   position: relative;
   min-height: 260px;
   height: clamp(220px, 30vh, 320px);
-  background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url("https://raw.githubusercontent.com/4kg/masterprize/refs/heads/main/header.jpg") center / cover no-repeat;
+  background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url("header.jpg") center / cover no-repeat;
   display: flex;
   flex-direction: column;
   padding: 1rem;
@@ -137,7 +137,8 @@ header {
   letter-spacing: 0.5px;
 }
 
-  /* --- CONTAINER --- */
+
+/* --- CONTAINER --- */
 .container {
   max-width: 1200px;
   margin: 0 auto;
@@ -146,7 +147,9 @@ header {
 }
 
 
-   /*  -----------     MENU   ---------- */
+
+
+  /*  -----------     MENU   ---------- */
 
 
 
@@ -304,25 +307,57 @@ header {
 }
 
 
+    /* ------------ LANGUAGES --------------------*/
 
 
-/* --- CONTAINER --- */
-.container {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 2.5rem 1rem; /* меньше боковых паддингов */
-  box-sizing: border-box;
+
+    .lang-switcher {
+  display: flex;
+  gap: 8px;
+  margin-top: 10px;
+}
+
+.lang-switcher a {
+  display: inline-block;
+  width: 32px;
+  height: 20px;
+  border-radius: 4px;
+  overflow: hidden;
+  border: 1px solid rgba(255,255,255,0.2);
+  transition: all 0.25s ease;
+}
+
+.lang-switcher a img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.lang-switcher a:hover {
+  transform: scale(1.1);
+  border-color: #ffcc33;
+  box-shadow: 0 0 8px rgba(255,204,51,0.6);
+}
+
+/* Активный язык */
+.lang-switcher a.active {
+  border-color: #ffcc33;
+  box-shadow: 0 0 10px rgba(255,204,51,0.8);
 }
 
 
-/* --- NEWS BANNER --- */
-.news-banner {
-  margin-bottom: 2rem;
-  font-size: 14px;
-  text-align: center;
-}
+
+
+
+
 
 /* --- FEEDBACK SLIDER --- */
+
+
+
+
+  
 .feedback-slider-wrapper {
   display: flex;
   align-items: center;
@@ -335,13 +370,6 @@ header {
   scroll-behavior: smooth;
   -webkit-overflow-scrolling: touch;
   flex: 1;
-}
-
-.feedback-slider-wrapper {
-  display: flex;
-  align-items: center;
-  overflow: hidden; /* скрываем внешний скролл */
-  margin-bottom: 2rem;
 }
 
 .feedback-slider {
@@ -475,43 +503,9 @@ footer {
     0 0 22px rgba(200,169,106,0.22);   /* мягкое золото */
 }
 
- 
 
 
-  .lang-switcher {
-  display: flex;
-  gap: 8px;
-  margin-top: 10px;
-}
 
-.lang-switcher a {
-  display: inline-block;
-  width: 32px;
-  height: 20px;
-  border-radius: 4px;
-  overflow: hidden;
-  border: 1px solid rgba(255,255,255,0.2);
-  transition: all 0.25s ease;
-}
-
-.lang-switcher a img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  display: block;
-}
-
-.lang-switcher a:hover {
-  transform: scale(1.1);
-  border-color: #ffcc33;
-  box-shadow: 0 0 8px rgba(255,204,51,0.6);
-}
-
-/* Активный язык */
-.lang-switcher a.active {
-  border-color: #ffcc33;
-  box-shadow: 0 0 10px rgba(255,204,51,0.8);
-}
 
 /* ------------------------ FOOTER --------------------*/
 
@@ -671,38 +665,6 @@ footer {
   }
 }
 
-
-  /*------------ МОБИЛА ----------------------*/
-
-@media (max-width: 900px) {
-  .footer-inner {
-    grid-template-columns: 1fr;
-    text-align: center;
-    gap: 2rem;
-  }
-
-  .footer-meta {
-    text-align: center;
-  }
-
-  .footer-links {
-    justify-content: center;
-    grid-template-columns: repeat(2, auto);
-  }
-    
-
-/*------------  ЕЩЁ МОБИЛА ----------------------*/
-
-    
-  .footer-meta {
-    text-align: center;
-  }
-
-  .footer-links {
-    justify-content: center;
-    grid-template-columns: repeat(2, auto);
-  }
-
 /*--------------------     ФИЧА ДЛЯ МОБИЛЫ       ----------------*/
 
 .feedback-slider {
@@ -787,10 +749,16 @@ footer {
   color: #e7d3a3;
 }
 
+/* показываем только на мобиле */
+@media (max-width: 900px) {
+  .mobile-bottom-nav {
+    display: flex;
+  }
 
   body {
     padding-bottom: 74px; /* чтобы контент не перекрывался */
   }
+}
 
   .tap-feedback {
   -webkit-tap-highlight-color: rgba(255,204,51,0.25);
@@ -823,25 +791,29 @@ footer {
     font-size: 14px;
   }
 }
+  
 
-    /* ===== MOBILE BOTTOM NAV VISIBILITY ===== */
-    
-@media (max-width: 1024px) {
-  .mobile-bottom-nav {
-    display: flex;
-  }
+  /* ---- СЛАЙДЕР -----*/
+  
+.feedback-slider {
+  scroll-snap-type: x mandatory;
+}
 
-  body {
-    padding-bottom: 74px;
-  }
+.feedback-track img {
+  scroll-snap-align: start;
+  flex: 0 0 auto;
+}
 
 
-  /* -------------- DONATE ----------------------- */
+
+
+
+/* -------------- DONATE ----------------------- */
 
 .header-top {
   display: flex;
   justify-content: space-between;
-  align-items: flex-start;
+  align-items: center; /* ← ключевой фикс */
   gap: 12px;
 }
 
@@ -849,22 +821,32 @@ footer {
 .donate-btn {
   position: relative;
   isolation: isolate;
-  align-self: flex-start;
-  margin-top: 2px;
 
-  padding: 9px 16px;
-  font-size: 13px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  height: 22px;            /* ← ключ */
+  padding: 0 12px;         /* убрали вертикальные паддинги */
+  font-size: 12px;
   font-weight: 700;
-  letter-spacing: .06em;
+  letter-spacing: .05em;
+  line-height: 1;
 
   color: #2a2100;
   text-decoration: none;
 
-  background: linear-gradient(
-    180deg,
-    #ffe27a,
-    #ffcc33
-  );
+  background: linear-gradient(180deg, #ffe27a, #ffcc33);
+  border-radius: 6px;
+  border: 1px solid rgba(255,204,51,0.85);
+
+  box-shadow:
+    0 4px 12px rgba(0,0,0,0.45),
+    0 0 10px rgba(255,204,51,0.22);
+
+  transition: all .25s ease;
+  overflow: hidden;
+}
 
   border-radius: 10px;
   border: 1px solid rgba(255,204,51,0.85);
@@ -949,9 +931,11 @@ footer {
 /* --- mobile --- */
 @media (max-width: 640px) {
   .donate-btn {
-    padding: 8px 13px;
+    height: 28px;
     font-size: 12px;
+    padding: 0 14px;
   }
+}
 
   .donate-btn.is-sticky {
     top: auto;
@@ -959,7 +943,7 @@ footer {
     right: 12px;
   }
 }
-  
+
 
 </style>
 </head>
