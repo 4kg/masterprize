@@ -1063,7 +1063,22 @@ window.addEventListener('scroll', () => {
 });
 </script>
 
+<script>
+(function () {
+  const bug = document.getElementById('seeBug');
+  if (!bug) return;
 
+  let awakened = false;
+
+  window.addEventListener('scroll', () => {
+    if (awakened) return;
+    if (window.scrollY > 40) {
+      bug.classList.add('is-awake');
+      awakened = true;
+    }
+  }, { passive: true });
+})();
+</script>
   
 </body>
 </html>
