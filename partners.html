@@ -246,6 +246,72 @@ footer{
   }
 
 }
+
+.trust-stack{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(160px,1fr));
+  gap:1.2rem;
+  text-align:center;
+}
+
+.trust-item{
+  background:#161616;
+  border:1px solid #2a2a2a;
+  border-radius:14px;
+  padding:1.2rem;
+}
+
+.trust-num{
+  color:#ffcc33;
+  font-weight:800;
+  font-size:clamp(22px,4vw,28px);
+}
+
+.trust-label{
+  font-size:13px;
+  color:#9aa0a6;
+}
+
+
+    .sticky-header{
+  position:sticky;
+  top:0;
+  z-index:1000;
+  background:rgba(11,11,11,.85);
+  backdrop-filter:blur(10px);
+  border-bottom:1px solid #262626;
+}
+
+.sticky-inner{
+  max-width:1200px;
+  margin:0 auto;
+  padding:.7rem 1rem;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+}
+
+.sticky-logo{
+  font-weight:800;
+  letter-spacing:.5px;
+}
+
+.sticky-btn{
+  background:#ffcc33;
+  color:#000;
+  padding:8px 14px;
+  border-radius:10px;
+  font-weight:700;
+  text-decoration:none;
+  font-size:14px;
+}
+
+@media (max-width:640px){
+  .sticky-logo{
+    font-size:13px;
+  }
+}
+    
 </style>
 
 
@@ -253,6 +319,21 @@ footer{
 </head>
 
 <body>
+
+    <header class="sticky-header">
+  <div class="sticky-inner">
+
+    <div class="sticky-logo">
+      MASTERPRIZE
+    </div>
+
+    <a class="sticky-btn"
+       href="https://docs.google.com/forms/d/e/1FAIpQLSf8buqrol8IW0EV7CExwG_cIl7EF91EuLuy2ken-T5sTTE5vA/viewform?usp=publish-editor">
+       Получить медиакит
+    </a>
+
+  </div>
+</header>
 
 <!-- HERO -->
 <section class="hero">
@@ -315,6 +396,32 @@ IT-специалисты, инженеры и студенты топ-вузо�
     <a href="https://docs.google.com/forms/d/e/1FAIpQLSf8buqrol8IW0EV7CExwG_cIl7EF91EuLuy2ken-T5sTTE5vA/viewform?usp=publish-editor" class="cta">
       Запросить расчёт
     </a>
+
+  </div>
+</section>
+
+    <section class="container section">
+  <div class="trust-stack">
+
+    <div class="trust-item">
+      <div class="trust-num">7 000+</div>
+      <div class="trust-label">игроков в год</div>
+    </div>
+
+    <div class="trust-item">
+      <div class="trust-num">9 000+</div>
+      <div class="trust-label">просмотров трансляций</div>
+    </div>
+
+    <div class="trust-item">
+      <div class="trust-num">5+</div>
+      <div class="trust-label">стран участников</div>
+    </div>
+
+    <div class="trust-item">
+      <div class="trust-num">2–6 недель</div>
+      <div class="trust-label">срок запуска интеграции</div>
+    </div>
 
   </div>
 </section>
