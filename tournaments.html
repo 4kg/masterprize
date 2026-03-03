@@ -947,22 +947,28 @@ header {
 
 }
 
-    /* -------------------------- DEBUG ------------------- */
+    
+
+/* --------------- debug ------------------------ */
 
 .see-bug {
   margin-top: 6px;
+  margin-bottom: 2px;
   text-align: left;
-  opacity: 0;
-  transform: translateY(-4px);
-  transition: all .25s ease;
-  pointer-events: none;
+  opacity: 0.18;
+  transform: translateY(-2px);
+  transition: opacity .25s ease, transform .25s ease;
 }
 
-/* показываем только при наведении на header */
-header:hover .see-bug {
-  opacity: 1;
+/* мягкое проявление при hover hero */
+header:hover + .container .see-bug {
+  opacity: 0.55;
   transform: translateY(0);
-  pointer-events: auto;
+}
+
+/* после скролла — чуть заметнее */
+.see-bug.is-awake {
+  opacity: 0.65;
 }
 
 .see-bug a {
@@ -972,10 +978,10 @@ header:hover .see-bug {
   color: rgba(255, 255, 255, 0.32);
   text-decoration: none;
   position: relative;
-  transition: all .25s ease;
+  transition: color .22s ease;
 }
 
-/* микро-линия */
+/* ultra-thin underline */
 .see-bug a::after {
   content: "";
   position: absolute;
@@ -983,30 +989,32 @@ header:hover .see-bug {
   bottom: -2px;
   width: 100%;
   height: 1px;
-  background: rgba(255, 255, 255, 0.18);
-  transform: scaleX(0.4);
+  background: rgba(255, 255, 255, 0.16);
+  transform: scaleX(0.32);
   transform-origin: left;
-  transition: all .25s ease;
+  transition: transform .22s ease, background .22s ease;
 }
 
 .see-bug a:hover {
-  color: rgba(255, 255, 255, 0.7);
+  color: rgba(255, 255, 255, 0.75);
 }
 
 .see-bug a:hover::after {
   transform: scaleX(1);
-  background: rgba(255, 255, 255, 0.4);
+  background: rgba(255, 255, 255, 0.42);
 }
 
-/* ===== MOBILE: всегда видно (нет hover) ===== */
+/* ===== MOBILE ===== */
 @media (max-width: 640px) {
   .see-bug {
-    opacity: 0.6;
+    opacity: 0.5;
     transform: none;
-    pointer-events: auto;
+  }
+
+  .see-bug a {
+    font-size: 10.5px;
   }
 }
-
 
 
 </style>
@@ -1048,9 +1056,12 @@ header:hover .see-bug {
     
 </header>
 
-        <div class="see-bug">
-  <a href="/report.html">See bug?</a>
+<div class="container">
+  <div class="see-bug" id="seeBug">
+    <a href="/report.html">See bug?</a>
+  </div>
 </div>
+    
 
   <div class="top-menu">
   <a href="index.html" class="menu-card">Главная</a>
@@ -1183,6 +1194,24 @@ window.addEventListener('scroll', () => {
   lastScroll = y;
 });
 </script>
+
+<script>
+(function () {
+  const bug = document.getElementById('seeBug');
+  if (!bug) return;
+
+  let awakened = false;
+
+  window.addEventListener('scroll', () => {
+    if (awakened) return;
+    if (window.scrollY > 40) {
+      bug.classList.add('is-awake');
+      awakened = true;
+    }
+  }, { passive: true });
+})();
+</script>
+
     
 </body>
   </html>
