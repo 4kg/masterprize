@@ -1058,7 +1058,7 @@ header:hover + .container .see-bug {
 }
 
 
-  /* ===== PREMIUM SCROLL BUTTONS ===== */
+  /* -------------  SCROLL BUTTONS ---------------------- */
 
 .scroll-btn {
   position: relative;
@@ -1146,28 +1146,78 @@ header:hover + .container .see-bug {
   }
 }
 
-  .feedback-slider-wrapper {
+.feedback-slider-wrapper {
   position: relative;
+  display: flex;
+  align-items: center;
+}
+
+  .feedback-slider {
+  padding-inline: 64px; 
 }
 
 .scroll-btn {
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
-  backdrop-filter: blur(6px);
+  z-index: 20;
 
-  z-index: 5;          /* для слоёв */
-  pointer-events: auto;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background: rgba(18,18,18,0.75);
+  backdrop-filter: blur(8px);
+
+  border: 1px solid rgba(255,255,255,0.12);
+  color: #ffcc33;
+  font-size: 18px;
+
+  cursor: pointer;
+
+  transition:
+    transform .18s cubic-bezier(.22,.61,.36,1),
+    background .2s ease,
+    box-shadow .2s ease;
 }
 
-.scroll-btn.left {
-  left: 8px;
+/* hover */
+.scroll-btn:hover {
+  transform: translateY(-50%) scale(1.08);
+  background: rgba(28,28,28,0.95);
+  box-shadow: 0 8px 22px rgba(0,0,0,.55);
+}
+
+.scroll-btn:active {
+  transform: translateY(-50%) scale(0.94);
+}
+
+  .scroll-btn.left {
+  left: 12px;
 }
 
 .scroll-btn.right {
-  right: 8px;
+  right: 12px;
 }
 
+  @media (max-width: 640px) {
+  .feedback-slider {
+    padding-inline: 56px;
+  }
+
+  .scroll-btn {
+    width: 40px;
+    height: 40px;
+    font-size: 16px;
+  }
+
+  .scroll-btn.left  { left: 8px; }
+  .scroll-btn.right { right: 8px; }
+}
 
 </style>
 </head>
