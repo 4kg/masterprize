@@ -1170,8 +1170,8 @@ header:hover + .container .see-bug {
   align-items: center;
   justify-content: center;
 
-  background: rgba(18,18,18,0.75);
-  backdrop-filter: blur(8px);
+  background: rgba(18,18,18,0.55);
+  backdrop-filter: blur(8px);                             
 
   border: 1px solid rgba(255,255,255,0.12);
   color: #ffcc33;
@@ -1219,6 +1219,20 @@ header:hover + .container .see-bug {
   .scroll-btn.right { right: 8px; }
 }
 
+.scroll-btn:hover,
+.scroll-btn:active {
+  background: rgba(28,28,28,0.9);
+}
+
+@media (max-width: 640px) {
+  .scroll-btn {
+    background: rgba(18,18,18,0.42);
+    border-color: rgba(255,255,255,0.10);
+    backdrop-filter: blur(6px);
+  }
+}
+
+  
 </style>
 </head>
 <body>
