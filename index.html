@@ -1155,6 +1155,9 @@ header:hover + .container .see-bug {
   top: 50%;
   transform: translateY(-50%);
   backdrop-filter: blur(6px);
+
+  z-index: 5;          /* для слоёв */
+  pointer-events: auto;
 }
 
 .scroll-btn.left {
