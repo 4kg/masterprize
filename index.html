@@ -1232,6 +1232,37 @@ header:hover + .container .see-bug {
   }
 }
 
+  .feedback-track img {
+  height: 150px;
+  border-radius: 8px;
+  object-fit: cover;
+
+  border: 1px solid rgba(255,255,255,0.06);
+
+  box-shadow:
+    0 6px 18px rgba(0,0,0,0.45);
+}
+
+  .feedback-slider-wrapper::before,
+.feedback-slider-wrapper::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  width: 80px;
+  height: 100%;
+  pointer-events: none;
+  z-index: 10;
+}
+
+.feedback-slider-wrapper::before {
+  left: 0;
+  background: linear-gradient(90deg,#111,transparent);
+}
+
+.feedback-slider-wrapper::after {
+  right: 0;
+  background: linear-gradient(-90deg,#111,transparent);
+}
   
 </style>
 </head>
