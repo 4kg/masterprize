@@ -1257,6 +1257,18 @@ header:hover + .container .see-bug {
   background: linear-gradient(-90deg,#111,transparent);
 }
 
+    img {
+  opacity: 0;
+  transform: scale(0.98);
+  transition:
+    opacity .6s ease,
+    transform .6s ease;
+}
+
+img.loaded {
+  opacity: 1;
+  transform: scale(1);
+}
 
   
 
@@ -1319,14 +1331,14 @@ Prize tournaments online and offline, in cooperation with the Russian Go Federat
     <button class="scroll-btn left">&#8592;</button>
     <div class="feedback-slider">
       <div class="feedback-track">
-        <img src="https://raw.githubusercontent.com/4kg/masterprize/refs/heads/main/win_money_2.jpg" alt="Fresh format">
-        <img src="https://raw.githubusercontent.com/4kg/masterprize/refs/heads/main/win_money_4.jpg" alt="Serious prize fund">
-        <img src="https://raw.githubusercontent.com/4kg/masterprize/refs/heads/main/win_money_1.jpg" alt="Organization and control">
-        <img src="https://raw.githubusercontent.com/4kg/masterprize/refs/heads/main/win_money_5.jpg" alt="Cool venues">
-        <img src="https://raw.githubusercontent.com/4kg/masterprize/refs/heads/main/win_money_2.jpg" alt="Fresh format">
-        <img src="https://raw.githubusercontent.com/4kg/masterprize/refs/heads/main/win_money_4.jpg" alt="Serious prize fund">
-        <img src="https://raw.githubusercontent.com/4kg/masterprize/refs/heads/main/win_money_1.jpg" alt="Organization and control">
-        <img src="https://raw.githubusercontent.com/4kg/masterprize/refs/heads/main/win_money_5.jpg" alt="Cool venues">
+        <img src="https://raw.githubusercontent.com/4kg/masterprize/refs/heads/main/win_money_2.jpg" loading="lazy" decoding="async" alt="Fresh format">
+        <img src="https://raw.githubusercontent.com/4kg/masterprize/refs/heads/main/win_money_4.jpg" loading="lazy" decoding="async"alt="Serious prize fund">
+        <img src="https://raw.githubusercontent.com/4kg/masterprize/refs/heads/main/win_money_1.jpg" loading="lazy" decoding="async"alt="Organization and control">
+        <img src="https://raw.githubusercontent.com/4kg/masterprize/refs/heads/main/win_money_5.jpg" loading="lazy" decoding="async"alt="Cool venues">
+        <img src="https://raw.githubusercontent.com/4kg/masterprize/refs/heads/main/win_money_2.jpg" loading="lazy" decoding="async"alt="Fresh format">
+        <img src="https://raw.githubusercontent.com/4kg/masterprize/refs/heads/main/win_money_4.jpg" loading="lazy" decoding="async"alt="Serious prize fund">
+        <img src="https://raw.githubusercontent.com/4kg/masterprize/refs/heads/main/win_money_1.jpg" loading="lazy" decoding="async"alt="Organization and control">
+        <img src="https://raw.githubusercontent.com/4kg/masterprize/refs/heads/main/win_money_5.jpg" loading="lazy" decoding="async"alt="Cool venues">
       </div>
     </div>
     <button class="scroll-btn right">&#8594;</button>
@@ -1434,6 +1446,21 @@ window.addEventListener('scroll', () => {
   lastScroll = y;
 });
 </script>
+
+
+<script>
+document.querySelectorAll("img").forEach(img => {
+  if (img.complete) {
+    img.classList.add("loaded");
+  } else {
+    img.addEventListener("load", () => {
+      img.classList.add("loaded");
+    });
+  }
+});
+</script>
+  
+  
 
 <script>
 (function () {
