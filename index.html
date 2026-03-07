@@ -1443,6 +1443,11 @@ const btnRight = document.querySelector('.scroll-btn.right');
 
 const scrollAmount = () => slider.clientWidth * 0.9;
 
+/* стартуем из центра */
+window.addEventListener('load', () => {
+  slider.scrollLeft = slider.scrollWidth / 2 - slider.clientWidth / 2;
+});
+
 btnLeft.addEventListener('click', () => {
   slider.scrollBy({ left: -scrollAmount(), behavior: 'smooth' });
 });
@@ -1451,7 +1456,6 @@ btnRight.addEventListener('click', () => {
   slider.scrollBy({ left: scrollAmount(), behavior: 'smooth' });
 });
 </script>
-
 
   <nav class="mobile-bottom-nav">
   <a href="index.html" class="mb-item active">🏠<span>Главная</span></a>
