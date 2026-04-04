@@ -47,7 +47,7 @@ header {
   position: relative;
   min-height: 260px;
   height: clamp(220px, 30vh, 320px);
-  background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url("https://raw.githubusercontent.com/4kg/masterprize/refs/heads/main/header.jpg") center / cover no-repeat;
+  background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url("header.jpg") center / cover no-repeat;
   display: flex;
   flex-direction: column;
   padding: 1rem;
@@ -66,7 +66,7 @@ header {
     );
   pointer-events: none;
 }
-    
+
   header::after {
   content: "";
   position: absolute;
@@ -79,13 +79,17 @@ header {
   pointer-events: none;
 }
 
-  .header-text { margin-top: auto; width: 100%; text-align: left; }
+.header-text {
+  margin-top: auto;
+  width: 100%;
+  text-align: left;
+}
   
 .header-text h1 {
   margin: 0;
   font-weight: 700;
   letter-spacing: 2px;
-  animation: goldFlow 8s linear infinite, goldPulse 6s ease-in-out infinite;
+
   background: linear-gradient(
     90deg,
     #fff6c2 0%,
@@ -98,6 +102,8 @@ header {
   background-size: 200% auto;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
+
+animation: goldFlow 6s linear infinite, goldPulse 4s ease-in-out infinite;
 
   text-shadow:
     0 0 10px rgba(255, 204, 51, 0.6),
@@ -127,9 +133,9 @@ header {
     text-shadow:
       0 0 8px rgba(255, 204, 51, 0.5),
       0 0 20px rgba(255, 153, 0, 0.3);
-  }  }
+  }
+}
 
-    
 
   .header-subtitle {
     font-size: 15px;
@@ -139,143 +145,6 @@ header {
     color: #b5b5b5;
     letter-spacing: 0.5px;
   }
-
-
-  .dropdown a {
-    display: block;
-    padding: 0.4rem 0;
-    color: #8fbcd4;
-  }
-
-  .container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 2.5rem 1.5rem;
-  }
-
-  h2 {
-    text-align: center;
-    margin-bottom: 2.5rem;
-    color: #d8d8d8;
-  }
-
-  /* GRID */
-.titles-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 260px); /* фиксированная ширина карточки */
-  justify-content: center; /* центрируем сетку */
-  gap: 1.5rem;
-}
-
- .title-card {
-  background: #1c1c1c;
-  border: 1px solid #333;
-  border-radius: 8px;
-  padding: 0.8rem;
-  text-align: center;
-  transition: 0.3s ease;
-}
-  .title-card:hover {
-    transform: translateY(-6px);
-    box-shadow: 0 0 25px rgba(255, 204, 51, 0.5);
-  }
-
-.title-card img {
-  width: 100%;
-  aspect-ratio: 1 / 1;
-  object-fit: cover;
-  border-radius: 6px;
-  margin-bottom: 0.8rem;
-}
-
-
-.tournament-name {
-  font-size: 13px;
-  color: #999;
-  margin-bottom: 0.2rem;
-}
-
-.title-name {
-  font-size: 16px;
-  font-weight: bold;
-  color: #ffcc33;
-}
-
-  footer {
-    margin-top: 5rem;
-    padding: 3rem 0;
-    background: #0f0f0f;
-    border-top: 1px solid #2f2f2f;
-  }
-
-  .footer-content {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 1.5rem;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    font-size: 14px;
-    color: #999;
-  }
-
-
-
-   /* ===== СТИЛИ ТАБЛИЦЫ ТУРНИРОВ ===== */
-  .tournament-table {
-    width: auto;
-    border-collapse: collapse;
-    display: table; 
-    margin: 20px auto;
-    color: #e0e0e0; /* светлый текст */
-    table-layout: auto; /* фиксированная ширина столбцов */
-  }
-
-  .tournament-table th,
-  .tournament-table td {
-    border: 1px solid #444; /* чёткая граница */
-    padding: 10px 12px;      /* внутренние отступы */
-    overflow: hidden;
-    text-overflow: ellipsis;
-    white-space: nowrap;
-    min-width: 120px; /* примерно 15 символов */
-  }
-
-  .tournament-table th {
-    background: #222;
-    text-align: left;
-  }
-
-  .tournament-table td:nth-child(1),
-  .tournament-table td:nth-child(3) {
-    text-align: center;
-  }
-
-  .tournament-table td:nth-child(4) {
-    text-align: right;
-  }
-
-  .tournament-table a {
-    color: #8fbcd4;
-    text-decoration: none;
-  }
-
-  .tournament-table a:hover {
-    text-decoration: underline;
-  }
-
-
-  .content-box {
-  max-width: 1200px;
-  margin: 0 auto 2rem;
-  background-color: #1f1f1f; /* чуть светлее, чем фон сайта */
-  padding: 2rem;
-  border-radius: 8px;
-  margin-bottom: 2rem;
-  box-shadow:
-    0 18px 40px rgba(0,0,0,0.55),      /* глубина */
-    0 0 22px rgba(200,169,106,0.22);   /* мягкое золото */
-}
 
     
 
@@ -479,7 +348,96 @@ header {
 
 
 
-/* ----------------------------- FOOTER ----------------------------*/
+
+
+
+
+
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2.5rem 1.5rem;
+  }
+
+  h2 {
+    text-align: center;
+    margin-bottom: 2.5rem;
+    color: #d8d8d8;
+  }
+
+  /* GRID */
+.titles-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1.5rem;
+}
+
+ .title-card {
+  background: #1c1c1c;
+  border: 1px solid #333;
+  border-radius: 8px;
+  padding: 0.8rem;
+  text-align: center;
+  transition: 0.3s ease;
+}
+  .title-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 0 25px rgba(255, 204, 51, 0.5);
+  }
+
+.title-card img {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+  border-radius: 6px;
+  margin-bottom: 0.8rem;
+}
+
+
+.tournament-name {
+  font-size: 13px;
+  color: #999;
+  margin-bottom: 0.2rem;
+}
+
+.title-name {
+  font-size: 16px;
+  font-weight: bold;
+  color: #ffcc33;
+}
+
+  footer {
+    margin-top: 5rem;
+    padding: 3rem 0;
+    background: #0f0f0f;
+    border-top: 1px solid #2f2f2f;
+  }
+
+  .footer-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1.5rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 14px;
+    color: #999;
+  }
+
+
+  .content-box {
+  max-width: 1200px;
+  margin: 0 auto 2rem;
+  background-color: #1f1f1f; /* чуть светлее, чем фон сайта */
+  padding: 2rem;
+  border-radius: 8px;
+  margin-bottom: 2rem;
+  box-shadow:
+    0 18px 40px rgba(0,0,0,0.55),      /* глубина */
+    0 0 22px rgba(200,169,106,0.22);   /* мягкое золото */
+}
+
+    /* ----------------------------- FOOTER ----------------------------*/
 
 
 .site-footer {
@@ -618,7 +576,7 @@ header {
   color: #4f4f4f;
 }
 
-/* ================= MOBILE ================= */
+/*------------ МОБИЛА ----------------------*/
 
 @media (max-width: 900px) {
   .footer-inner {
@@ -635,17 +593,11 @@ header {
     justify-content: center;
     grid-template-columns: repeat(2, auto);
   }
-}
+    
 
-/* ================= MOBILE ================= */
+/*------------  ЕЩЁ МОБИЛА ----------------------*/
 
-@media (max-width: 900px) {
-  .footer-inner {
-    grid-template-columns: 1fr;
-    text-align: center;
-    gap: 2rem;
-  }
-
+    
   .footer-meta {
     text-align: center;
   }
@@ -740,16 +692,10 @@ header {
   color: #e7d3a3;
 }
 
-/* показываем только на мобиле */
-@media (max-width: 900px) {
-  .mobile-bottom-nav {
-    display: flex;
-  }
 
   body {
     padding-bottom: 74px; /* чтобы контент не перекрывался */
   }
-}
 
   .tap-feedback {
   -webkit-tap-highlight-color: rgba(255,204,51,0.25);
@@ -782,6 +728,18 @@ header {
     font-size: 14px;
   }
 }
+
+    /* ===== MOBILE BOTTOM NAV VISIBILITY ===== */
+    
+@media (max-width: 1024px) {
+  .mobile-bottom-nav {
+    display: flex;
+  }
+
+  body {
+    padding-bottom: 74px;
+  }
+}
   
 
   /* ---- СЛАЙДЕР -----*/
@@ -795,12 +753,6 @@ header {
   flex: 0 0 auto;
 }
 
-/* -------- табле скролле ------------ */
-
-.table-scroll {
-  overflow-x: auto;
-  -webkit-overflow-scrolling: touch;
-}
 
 
 /* -------------- DONATE ----------------------- */
@@ -939,25 +891,6 @@ header {
   }
 }
 
-  /* ===== MOBILE: центрируем header ===== */
-@media (max-width: 640px) {
-
-  .header-text {
-    text-align: center;
-  }
-
-  .header-text h1 {
-    margin-left: auto;
-    margin-right: auto;
-  }
-
-  .header-subtitle {
-    text-align: center;
-    margin-left: auto;
-    margin-right: auto;
-  }
-
-}
 
     /* --------------- debug ------------------------ */
 
@@ -1026,7 +959,7 @@ header:hover + .container .see-bug {
   }
 }
 
-          /* ===== MOBILE: центрируем header ===== */
+      /* ===== MOBILE: центрируем header ===== */
 @media (max-width: 640px) {
 
   .header-text {
@@ -1049,6 +982,7 @@ header:hover + .container .see-bug {
     .mobile-bottom-nav {
   box-shadow: 0 -6px 18px rgba(0,0,0,0.45);
 }
+
 
 </style>
     
